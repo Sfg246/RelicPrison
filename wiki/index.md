@@ -41,10 +41,10 @@ features:
 ## Pick your path
 
 <div class="journey-grid">
-  <div class="quest-card"><span class="quest-number">1</span><strong>I am brand new</strong><br><br>Start with <a href="/guide/installation">Installation</a>. It assumes you have never configured RelicPrison before.</div>
-  <div class="quest-card"><span class="quest-number">2</span><strong>I am building my server</strong><br><br>Use the <a href="/guide/first-server">First Server Setup</a> checklist and build each system in order.</div>
-  <div class="quest-card"><span class="quest-number">3</span><strong>I need one answer</strong><br><br>Jump to <a href="/reference/commands">Commands</a>, <a href="/reference/permissions">Permissions</a>, or <a href="/reference/placeholders">Placeholders</a>.</div>
-  <div class="quest-card"><span class="quest-number">4</span><strong>Something is broken</strong><br><br>Go directly to <a href="/troubleshooting/">Troubleshooting</a> or <a href="/admin/operations">Diagnostics & Recovery</a>.</div>
+  <div class="quest-card"><span class="quest-number">1</span><strong>I am brand new</strong><br><br>Start with <a href="./guide/installation">Installation</a>. It assumes you have never configured RelicPrison before.</div>
+  <div class="quest-card"><span class="quest-number">2</span><strong>I am building my server</strong><br><br>Use the <a href="./guide/first-server">First Server Setup</a> checklist and build each system in order.</div>
+  <div class="quest-card"><span class="quest-number">3</span><strong>I need one answer</strong><br><br>Jump to <a href="./reference/commands">Commands</a>, <a href="./reference/permissions">Permissions</a>, or <a href="./reference/placeholders">Placeholders</a>.</div>
+  <div class="quest-card"><span class="quest-number">4</span><strong>Something is broken</strong><br><br>Go directly to <a href="./troubleshooting/">Troubleshooting</a> or <a href="./admin/operations">Diagnostics & Recovery</a>.</div>
 </div>
 
 ## The RelicPrison mental model
