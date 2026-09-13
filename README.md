@@ -4,15 +4,21 @@ RelicPrison is the Paper prison core for RelicWorld.
 
 ## Documentation
 
-A full public-facing documentation site now lives in [`wiki/`](wiki/README.md). It includes:
+The public documentation site is live at **https://sfg246.github.io/RelicPrison/** and its source lives in [`wiki/`](wiki/README.md).
 
-- beginner setup journey;
-- mines, resets, progression, economy, boosters, and gangs;
-- configuration and integration guides;
-- command, permission, and PlaceholderAPI references;
-- administration, diagnostics, backup/restore, troubleshooting, and recovery;
-- developer API and thread-safety guidance;
-- RC6 staging status.
+The wiki includes:
+
+- beginner installation and a zero-to-launch course;
+- mines, resets, progression, economy, boosters, gangs, leaderboards, and GUIs;
+- an interactive command explorer;
+- permissions and PlaceholderAPI references;
+- source-generated documentation for every packaged YAML setting;
+- source-generated public Java API service/event references;
+- compatibility and RC staging matrices;
+- copy-paste setup recipes;
+- diagnostics, backup/restore, troubleshooting, and an error encyclopedia;
+- visual architecture flows and GUI/client capture tracking;
+- release/version documentation and developer examples.
 
 The engineering and implementation notes under [`docs/`](docs/) remain the internal technical/history record.
 
@@ -32,6 +38,4 @@ npm install
 npm run docs:build
 ```
 
-The generated static site is written to `wiki/.vitepress/dist`.
-
-For detailed installation and server-owner instructions, start at `wiki/guide/installation.md` or run the VitePress site locally.
+The docs build first regenerates YAML/API references from the live source, then builds VitePress into `wiki/.vitepress/dist`. GitHub Pages deploys the result automatically from `main`.
