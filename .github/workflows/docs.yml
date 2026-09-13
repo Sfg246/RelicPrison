@@ -1,0 +1,32 @@
+name: Docs Build
+
+on:
+  push:
+    paths:
+      - 'wiki/**'
+      - '.github/workflows/docs.yml'
+  pull_request:
+    paths:
+      - 'wiki/**'
+      - '.github/workflows/docs.yml'
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install documentation dependencies
+        working-directory: wiki
+        run: npm install --no-audit --no-fund
+      - name: Build documentation
+        working-directory: wiki
+        run: npm run docs:build
+      - name: Upload documentation site
+        uses: actions/upload-artifact@v4
+        with:
+          name: relicprison-docs-site
+          path: wiki/.vitepress/dist
+          if-no-files-found: error
