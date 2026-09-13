@@ -1,0 +1,42 @@
+file-version: 2
+# Enable features.block-events in config.yml to activate this system.
+# Disabled events add no listeners, tasks, polling, or per-block work beyond a single feature check.
+#
+# Trigger options:
+# - chance-per-block
+# - chance-per-action
+# - normal mining type: normal
+# - bulk mining type: bulk
+# - both mining types: both
+# - every-x-blocks
+# - first-time
+# - daily-target
+#
+# Period behavior:
+# Daily totals use server.timezone from config.yml.
+# Weekly totals use ISO week boundaries in that same timezone.
+events:
+  lucky-miner:
+    enabled: false
+    priority: 100
+    trigger: chance-per-action
+    mining-type: both
+    chance: 0.01
+    cooldown-seconds: 60
+    blocks:
+      - DIAMOND_ORE
+      - EMERALD_ORE
+    mines: []
+    minimum-rank: null
+    minimum-prestige: null
+    permissions: []
+    per-action-command-limit: 4
+    per-action-reward-limit: 16
+    rewards:
+      money: 1000
+      items:
+        - id: DIAMOND
+          amount: 1
+      commands:
+        - "say %player% found a lucky mining reward after %blocks% blocks"
+      announcements: []

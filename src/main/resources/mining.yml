@@ -1,0 +1,83 @@
+file-version: 1
+# Legacy compatibility values only. Player toggles are no longer used.
+# Enable or disable each system globally under features: in config.yml.
+toggles:
+  autopickup: false
+  autosmelt: false
+  autoblock: false
+
+autosell:
+  summary-seconds: 5
+
+inventory-overflow:
+  # DROP, SELL, or CANCEL
+  mode: DROP
+
+bulk-limits:
+  max-blocks-per-operation: 5000
+  max-operations-per-player-per-second: 10
+  max-global-blocks-per-tick: 20000
+
+autosmelt:
+  conversions:
+    RAW_IRON: IRON_INGOT
+    RAW_GOLD: GOLD_INGOT
+    RAW_COPPER: COPPER_INGOT
+    IRON_ORE: IRON_INGOT
+    DEEPSLATE_IRON_ORE: IRON_INGOT
+    GOLD_ORE: GOLD_INGOT
+    DEEPSLATE_GOLD_ORE: GOLD_INGOT
+    COPPER_ORE: COPPER_INGOT
+    DEEPSLATE_COPPER_ORE: COPPER_INGOT
+    ANCIENT_DEBRIS: NETHERITE_SCRAP
+
+autoblock:
+  # When true, AutoBlock may combine matching source items already in the player's inventory
+  # with newly mined drops. The conversion snapshots inventory first and rolls back on failure.
+  use-inventory: false
+  conversions:
+    COAL: COAL_BLOCK
+    IRON_INGOT: IRON_BLOCK
+    GOLD_INGOT: GOLD_BLOCK
+    COPPER_INGOT: COPPER_BLOCK
+    REDSTONE: REDSTONE_BLOCK
+    LAPIS_LAZULI: LAPIS_BLOCK
+    DIAMOND: DIAMOND_BLOCK
+    EMERALD: EMERALD_BLOCK
+    NETHERITE_INGOT: NETHERITE_BLOCK
+    QUARTZ: QUARTZ_BLOCK
+
+fortune:
+  level-multiplier: 1.0
+  maximum-level: 1000
+  excluded-materials: []
+
+tool-durability:
+  minimum-remaining: 1
+  warning-remaining: 25
+  # ONE_PER_OPERATION, PER_BLOCK, or CAPPED
+  bulk-mode: ONE_PER_OPERATION
+  bulk-cap: 10
+
+mining-xp:
+  # Material XP and mine XP are added to form the base XP for each physical block.
+  # Multipliers are MULTIPLICATIVE by default. ADDITIVE_BONUSES treats each multiplier as
+  # a bonus above 1.0 and adds those bonuses together.
+  multiplier-mode: MULTIPLICATIVE
+  bulk-scaling: 1.0
+  per-operation-cap: 5000
+  materials:
+    COAL_ORE: 1
+    DEEPSLATE_COAL_ORE: 1
+    IRON_ORE: 2
+    DEEPSLATE_IRON_ORE: 2
+    GOLD_ORE: 3
+    DEEPSLATE_GOLD_ORE: 3
+    DIAMOND_ORE: 5
+    DEEPSLATE_DIAMOND_ORE: 5
+    EMERALD_ORE: 7
+    DEEPSLATE_EMERALD_ORE: 7
+  mines: {}
+  rank-multipliers: {}
+  prestige-multipliers: {}
+  permission-multipliers: {}

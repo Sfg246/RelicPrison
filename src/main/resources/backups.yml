@@ -1,0 +1,10 @@
+file-version: 1
+
+automatic:
+  enabled: true
+  # Minimum accepted interval is 60 minutes.
+  interval-minutes: 1440
+  type: full
+
+retention:
+  keep: 20

@@ -1,0 +1,34 @@
+file-version: 3
+# Enable features.custom-block-drops in config.yml to activate these rules.
+# Legacy "drops:" files from 0.6.x are still accepted.
+#
+# Priority behavior:
+# - Matching definitions are evaluated from highest priority to lowest, then by ID.
+# - If exclusive is true and the definition triggers, lower-priority definitions are skipped.
+# Chance accepts either 0.0-1.0 fractions or 0-100 percentages.
+#
+# Command rewards are batched per mining action. Use %amount% for the rolled batch amount and
+# %blocks% for the number of physical blocks in the action.
+custom-drops:
+  ancient-fragment:
+    enabled: false
+    priority: 100
+    exclusive: false
+    blocks:
+      - DIAMOND_ORE
+      - EMERALD_ORE
+    mines:
+      - diamond
+      - emerald
+      - immortal
+    minimum-prestige: diamond
+    permissions: []
+    chance: 0.25
+    fortune-applicable: false
+    per-action-item-limit: 64
+    per-action-command-limit: 8
+    rewards:
+      items:
+        - id: itemsadder:relics:ancient_fragment
+          amount: 1
+      commands: []

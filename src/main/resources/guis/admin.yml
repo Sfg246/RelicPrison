@@ -1,0 +1,16 @@
+file-version: 2
+title: "&8Admin &7• &cControl Center"
+# Administrative submenus are generated from live services.
+# RC6 Stage 3 editors use GUI selection plus safe chat input for text/numeric fields.
+submenus:
+  mine-manager: "&8Admin &7• &bMine Manager"
+  composition-editor: "&8Admin &7• &aComposition"
+  reset-settings-editor: "&8Admin &7• &cReset Settings"
+  rank-editor: "&8Admin &7• &bRank Editor"
+  prestige-editor: "&8Admin &7• &dPrestige Editor"
+  sell-price-editor: "&8Admin &7• &6Sell Prices"
+  booster-manager: "&8Admin &7• &dBoosters"
+  block-event-editor: "&8Admin &7• &cBlock Events"
+  integration-status: "&8Admin &7• &bIntegrations"
+  diagnostics: "&8Admin &7• &bDiagnostics"
+  player-progression-manager: "&8Admin &7• &bPlayers"

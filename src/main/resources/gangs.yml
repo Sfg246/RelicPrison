@@ -1,0 +1,197 @@
+enabled: true
+
+creation:
+  cost: '1000000.00'
+
+validation:
+  name:
+    pattern: '[A-Za-z0-9 ]+'
+    minimum: 3
+    maximum: 24
+  tag:
+    pattern: '[A-Za-z0-9]+'
+    minimum: 2
+    maximum: 6
+
+members:
+  default-limit: 10
+  maximum-limit: 100
+  permission-limits:
+    relicprison.gang.limit.20: 20
+    relicprison.gang.limit.30: 30
+
+invites:
+  timeout: 24h
+
+bank:
+  capacity: '1000000000.00'
+  daily-withdrawal-limit: '0'
+
+progression:
+  maximum-level: 100
+  base-xp: '1000'
+  growth: '1.25'
+  xp-sources:
+    blocks: '0.10'
+    money: '0.00001'
+    rankups: '250'
+    prestiges: '5000'
+    block_events: '500'
+    missions: '1'
+    leaderboard: '1'
+
+ranks:
+  defaults:
+    owner:
+      display-name: Owner
+      priority: 100
+      color: '&c'
+      permissions: [invite, kick, promote, demote, manage_ranks, manage_rank_permissions, deposit_bank, withdraw_bank, purchase_upgrades, manage_gang_boosters, edit_identity, edit_privacy, set_gang_home, use_gang_home, manage_gang_chat, view_audit_log, transfer_ownership, disband]
+    co_leader:
+      display-name: Co-Leader
+      priority: 90
+      color: '&6'
+      permissions: [invite, kick, promote, demote, deposit_bank, withdraw_bank, purchase_upgrades, manage_gang_boosters, edit_identity, edit_privacy, set_gang_home, use_gang_home, manage_gang_chat, view_audit_log]
+    officer:
+      display-name: Officer
+      priority: 70
+      color: '&e'
+      permissions: [invite, kick, deposit_bank, use_gang_home, manage_gang_chat]
+    veteran:
+      display-name: Veteran
+      priority: 50
+      color: '&a'
+      permissions: [invite, deposit_bank, use_gang_home]
+    member:
+      display-name: Member
+      priority: 30
+      color: '&b'
+      permissions: [deposit_bank, use_gang_home]
+    recruit:
+      display-name: Recruit
+      priority: 10
+      color: '&7'
+      permissions: [deposit_bank]
+
+upgrades:
+  member_capacity:
+    enabled: true
+    display-name: Member Capacity
+    cost-type: POINTS
+    tiers:
+      - cost: '1000'
+        effects: {member_capacity: '5'}
+      - cost: '2500'
+        effects: {member_capacity: '10'}
+      - cost: '5000'
+        effects: {member_capacity: '20'}
+  sell_bonus:
+    enabled: true
+    display-name: Gang Sell Bonus
+    cost-type: POINTS
+    tiers:
+      - cost: '2000'
+        effects: {sell_multiplier: '1.02'}
+      - cost: '5000'
+        effects: {sell_multiplier: '1.05'}
+      - cost: '10000'
+        effects: {sell_multiplier: '1.10'}
+  mining_xp_bonus:
+    enabled: true
+    display-name: Mining XP Bonus
+    cost-type: POINTS
+    tiers:
+      - cost: '1500'
+        effects: {mining_xp_multiplier: '1.05'}
+      - cost: '4000'
+        effects: {mining_xp_multiplier: '1.10'}
+  gang_xp_multiplier:
+    enabled: true
+    display-name: Gang XP Multiplier
+    cost-type: POINTS
+    tiers:
+      - cost: '2500'
+        effects: {gang_xp_multiplier: '1.05'}
+      - cost: '7500'
+        effects: {gang_xp_multiplier: '1.15'}
+  bank_capacity:
+    enabled: true
+    display-name: Bank Capacity
+    cost-type: POINTS
+    tiers:
+      - cost: '1000'
+        effects: {bank_capacity: '2000000000'}
+      - cost: '3000'
+        effects: {bank_capacity: '5000000000'}
+  booster_duration:
+    enabled: true
+    display-name: Booster Duration
+    cost-type: POINTS
+    tiers:
+      - cost: '2000'
+        effects: {booster_duration_multiplier: '1.10'}
+      - cost: '6000'
+        effects: {booster_duration_multiplier: '1.25'}
+  block_event_bonus:
+    enabled: false
+    display-name: Block Event Bonus
+    cost-type: POINTS
+    tiers:
+      - cost: '5000'
+        effects: {block_event_multiplier: '1.05'}
+
+boosters:
+  maximum-multiplier: '5.0'
+  maximum-duration: 7d
+
+missions:
+  definitions:
+    daily_blocks:
+      enabled: true
+      display-name: Daily Dig
+      objective: BLOCKS
+      target: '10000'
+      reset: DAILY
+      rewards:
+        gang-xp: '1000'
+        gang-points: 100
+        gang-money: '0'
+        reward-components: []
+    weekly_money:
+      enabled: true
+      display-name: Weekly Earner
+      objective: MONEY
+      target: '10000000'
+      reset: WEEKLY
+      rewards:
+        gang-xp: '5000'
+        gang-points: 500
+        gang-money: '1000000'
+        reward-components: []
+
+leaderboards:
+  categories: [level, xp, blocks, money, prestiges, balance, block_events]
+  snapshot-size: 100
+
+seasons:
+  enabled: false
+  tracked-categories: [level, xp, blocks, money, prestiges, balance, block_events]
+  # position-list=component|component;position-list=component
+  reward-plan: '1=money:1000000|announcement:%gang% won the gang season;2,3=money:500000'
+
+messages:
+  placeholder-unavailable: none
+
+gui:
+  title: '&8Gang'
+  members-title: '&8Gang Members'
+  ranks-title: '&8Gang Ranks'
+  upgrades-title: '&8Gang Upgrades'
+  bank-title: '&8Gang Bank'
+  stats-title: '&8Gang Statistics'
+  contributions-title: '&8Gang Contributions'
+  boosters-title: '&8Gang Boosters'
+  missions-title: '&8Gang Missions'
+  leaderboards-title: '&8Gang Leaderboards'
+  settings-title: '&8Gang Settings'
+  audit-title: '&8Gang Audit Log'

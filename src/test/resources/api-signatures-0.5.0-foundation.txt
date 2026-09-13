@@ -1,0 +1,376 @@
+FIELD site.mcrelicworld.relicprison.api.model.MineResetState$State public,static,final,enum COMPLETING Lsite/mcrelicworld/relicprison/api/model/MineResetState$State;
+FIELD site.mcrelicworld.relicprison.api.model.MineResetState$State public,static,final,enum FAILED Lsite/mcrelicworld/relicprison/api/model/MineResetState$State;
+FIELD site.mcrelicworld.relicprison.api.model.MineResetState$State public,static,final,enum IDLE Lsite/mcrelicworld/relicprison/api/model/MineResetState$State;
+FIELD site.mcrelicworld.relicprison.api.model.MineResetState$State public,static,final,enum PREPARING Lsite/mcrelicworld/relicprison/api/model/MineResetState$State;
+FIELD site.mcrelicworld.relicprison.api.model.MineResetState$State public,static,final,enum QUEUED Lsite/mcrelicworld/relicprison/api/model/MineResetState$State;
+FIELD site.mcrelicworld.relicprison.api.model.MineResetState$State public,static,final,enum RESETTING Lsite/mcrelicworld/relicprison/api/model/MineResetState$State;
+FIELD site.mcrelicworld.relicprison.api.model.MineResetState$State public,static,final,enum WARNING Lsite/mcrelicworld/relicprison/api/model/MineResetState$State;
+METHOD site.mcrelicworld.relicprison.api.BackupService public,abstract backups()Ljava/util/Collection; signature=()Ljava/util/Collection<Lsite/mcrelicworld/relicprison/api/model/BackupView;>;
+METHOD site.mcrelicworld.relicprison.api.BackupService public,abstract create(Ljava/lang/String;)Ljava/util/concurrent/CompletableFuture; signature=(Ljava/lang/String;)Ljava/util/concurrent/CompletableFuture<Lsite/mcrelicworld/relicprison/api/model/BackupView;>;
+METHOD site.mcrelicworld.relicprison.api.BoosterService public,abstract activeFor(Ljava/util/UUID;)Ljava/util/Collection; signature=(Ljava/util/UUID;)Ljava/util/Collection<Lsite/mcrelicworld/relicprison/api/model/BoosterView;>;
+METHOD site.mcrelicworld.relicprison.api.BoosterService public,abstract activeServerBoosters()Ljava/util/Collection; signature=()Ljava/util/Collection<Lsite/mcrelicworld/relicprison/api/model/BoosterView;>;
+METHOD site.mcrelicworld.relicprison.api.DiagnosticService public,abstract snapshot()Lsite/mcrelicworld/relicprison/api/model/DiagnosticSnapshot;
+METHOD site.mcrelicworld.relicprison.api.MineAccessService public,abstract canEnter(Ljava/util/UUID;Ljava/lang/String;)Z
+METHOD site.mcrelicworld.relicprison.api.MineAccessService public,abstract canMine(Ljava/util/UUID;Ljava/lang/String;)Z
+METHOD site.mcrelicworld.relicprison.api.MineResetService public,abstract cancelPendingReset(Ljava/lang/String;)Z
+METHOD site.mcrelicworld.relicprison.api.MineResetService public,abstract isResetting(Ljava/lang/String;)Z
+METHOD site.mcrelicworld.relicprison.api.MineResetService public,abstract minedPercentage(Ljava/lang/String;)D
+METHOD site.mcrelicworld.relicprison.api.MineResetService public,abstract nextReset(Ljava/lang/String;)J
+METHOD site.mcrelicworld.relicprison.api.MineResetService public,abstract remainingBlocks(Ljava/lang/String;)J
+METHOD site.mcrelicworld.relicprison.api.MineResetService public,abstract requestReset(Ljava/lang/String;Ljava/lang/String;Z)Z
+METHOD site.mcrelicworld.relicprison.api.MineResetService public,abstract resetCount(Ljava/lang/String;)J
+METHOD site.mcrelicworld.relicprison.api.MineResetService public,abstract state(Ljava/lang/String;)Ljava/util/Optional; signature=(Ljava/lang/String;)Ljava/util/Optional<Lsite/mcrelicworld/relicprison/api/model/MineResetState;>;
+METHOD site.mcrelicworld.relicprison.api.MineService public,abstract findMine(Ljava/lang/String;)Ljava/util/Optional; signature=(Ljava/lang/String;)Ljava/util/Optional<+Lsite/mcrelicworld/relicprison/api/model/MineView;>;
+METHOD site.mcrelicworld.relicprison.api.MineService public,abstract mineAt(Ljava/lang/String;III)Ljava/util/Optional; signature=(Ljava/lang/String;III)Ljava/util/Optional<+Lsite/mcrelicworld/relicprison/api/model/MineView;>;
+METHOD site.mcrelicworld.relicprison.api.MineService public,abstract mineAt(Ljava/util/UUID;III)Ljava/util/Optional; signature=(Ljava/util/UUID;III)Ljava/util/Optional<+Lsite/mcrelicworld/relicprison/api/model/MineView;>;
+METHOD site.mcrelicworld.relicprison.api.MineService public,abstract mines()Ljava/util/Collection; signature=()Ljava/util/Collection<+Lsite/mcrelicworld/relicprison/api/model/MineView;>;
+METHOD site.mcrelicworld.relicprison.api.MiningService public,abstract activeOperations()J
+METHOD site.mcrelicworld.relicprison.api.MiningService public,abstract processedBlocks()J
+METHOD site.mcrelicworld.relicprison.api.MultiplierService public,abstract multiplier(Ljava/util/UUID;)Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.NumberFormatService public,abstract abbreviated(D)Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.NumberFormatService public,abstract abbreviatedCurrency(D)Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.NumberFormatService public,abstract abbreviatedCurrency(Ljava/math/BigDecimal;)Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.NumberFormatService public,abstract currency(D)Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.NumberFormatService public,abstract currency(Ljava/math/BigDecimal;)Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.NumberFormatService public,abstract full(D)Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.NumberFormatService public,abstract full(Ljava/math/BigDecimal;)Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.NumberFormatService public,abstract plain(D)Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.NumberFormatService public,abstract plain(Ljava/math/BigDecimal;)Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.NumberFormatService public,abstract progress(D)Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.PlayerDataService public,abstract cached(Ljava/util/UUID;)Ljava/util/Optional; signature=(Ljava/util/UUID;)Ljava/util/Optional<Lsite/mcrelicworld/relicprison/api/model/PlayerProfileView;>;
+METHOD site.mcrelicworld.relicprison.api.PlayerDataService public,abstract load(Ljava/util/UUID;Ljava/lang/String;)Ljava/util/concurrent/CompletableFuture; signature=(Ljava/util/UUID;Ljava/lang/String;)Ljava/util/concurrent/CompletableFuture<Lsite/mcrelicworld/relicprison/api/model/PlayerProfileView;>;
+METHOD site.mcrelicworld.relicprison.api.PrestigeService public,abstract prestige(Ljava/lang/String;)Ljava/util/Optional; signature=(Ljava/lang/String;)Ljava/util/Optional<Lsite/mcrelicworld/relicprison/api/model/PrestigeView;>;
+METHOD site.mcrelicworld.relicprison.api.PrestigeService public,abstract prestiges()Ljava/util/Collection; signature=()Ljava/util/Collection<Lsite/mcrelicworld/relicprison/api/model/PrestigeView;>;
+METHOD site.mcrelicworld.relicprison.api.ProgressionService public,abstract currentPrestige(Ljava/util/UUID;)Ljava/util/Optional; signature=(Ljava/util/UUID;)Ljava/util/Optional<Ljava/lang/String;>;
+METHOD site.mcrelicworld.relicprison.api.ProgressionService public,abstract currentRank(Ljava/util/UUID;)Ljava/util/Optional; signature=(Ljava/util/UUID;)Ljava/util/Optional<Ljava/lang/String;>;
+METHOD site.mcrelicworld.relicprison.api.ProgressionService public,abstract prestige(Ljava/util/UUID;)Ljava/util/concurrent/CompletableFuture; signature=(Ljava/util/UUID;)Ljava/util/concurrent/CompletableFuture<Lsite/mcrelicworld/relicprison/api/model/ProgressionResult;>;
+METHOD site.mcrelicworld.relicprison.api.ProgressionService public,abstract rankUp(Ljava/util/UUID;Z)Ljava/util/concurrent/CompletableFuture; signature=(Ljava/util/UUID;Z)Ljava/util/concurrent/CompletableFuture<Lsite/mcrelicworld/relicprison/api/model/ProgressionResult;>;
+METHOD site.mcrelicworld.relicprison.api.ProgressionService public,abstract repair(Ljava/util/UUID;)Ljava/util/concurrent/CompletableFuture; signature=(Ljava/util/UUID;)Ljava/util/concurrent/CompletableFuture<Ljava/lang/Void;>;
+METHOD site.mcrelicworld.relicprison.api.RankService public,abstract rank(Ljava/lang/String;)Ljava/util/Optional; signature=(Ljava/lang/String;)Ljava/util/Optional<Lsite/mcrelicworld/relicprison/api/model/RankView;>;
+METHOD site.mcrelicworld.relicprison.api.RankService public,abstract ranks()Ljava/util/Collection; signature=()Ljava/util/Collection<Lsite/mcrelicworld/relicprison/api/model/RankView;>;
+METHOD site.mcrelicworld.relicprison.api.RelicPrisonApi public,abstract backups()Lsite/mcrelicworld/relicprison/api/BackupService;
+METHOD site.mcrelicworld.relicprison.api.RelicPrisonApi public,abstract boosters()Lsite/mcrelicworld/relicprison/api/BoosterService;
+METHOD site.mcrelicworld.relicprison.api.RelicPrisonApi public,abstract diagnostics()Lsite/mcrelicworld/relicprison/api/DiagnosticService;
+METHOD site.mcrelicworld.relicprison.api.RelicPrisonApi public,abstract mineAccess()Lsite/mcrelicworld/relicprison/api/MineAccessService;
+METHOD site.mcrelicworld.relicprison.api.RelicPrisonApi public,abstract mines()Lsite/mcrelicworld/relicprison/api/MineService;
+METHOD site.mcrelicworld.relicprison.api.RelicPrisonApi public,abstract mining()Lsite/mcrelicworld/relicprison/api/MiningService;
+METHOD site.mcrelicworld.relicprison.api.RelicPrisonApi public,abstract multipliers()Lsite/mcrelicworld/relicprison/api/MultiplierService;
+METHOD site.mcrelicworld.relicprison.api.RelicPrisonApi public,abstract numbers()Lsite/mcrelicworld/relicprison/api/NumberFormatService;
+METHOD site.mcrelicworld.relicprison.api.RelicPrisonApi public,abstract players()Lsite/mcrelicworld/relicprison/api/PlayerDataService;
+METHOD site.mcrelicworld.relicprison.api.RelicPrisonApi public,abstract prestiges()Lsite/mcrelicworld/relicprison/api/PrestigeService;
+METHOD site.mcrelicworld.relicprison.api.RelicPrisonApi public,abstract progression()Lsite/mcrelicworld/relicprison/api/ProgressionService;
+METHOD site.mcrelicworld.relicprison.api.RelicPrisonApi public,abstract ranks()Lsite/mcrelicworld/relicprison/api/RankService;
+METHOD site.mcrelicworld.relicprison.api.RelicPrisonApi public,abstract resets()Lsite/mcrelicworld/relicprison/api/MineResetService;
+METHOD site.mcrelicworld.relicprison.api.RelicPrisonApi public,abstract selling()Lsite/mcrelicworld/relicprison/api/SellService;
+METHOD site.mcrelicworld.relicprison.api.RelicPrisonApi public,abstract statistics()Lsite/mcrelicworld/relicprison/api/StatisticsService;
+METHOD site.mcrelicworld.relicprison.api.RelicPrisonApi public,abstract version()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.SellService public,abstract estimatedHeldValue(Ljava/util/UUID;)Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.SellService public,abstract estimatedInventoryValue(Ljava/util/UUID;)Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.SellService public,abstract sellInventory(Ljava/util/UUID;)Ljava/util/concurrent/CompletableFuture; signature=(Ljava/util/UUID;)Ljava/util/concurrent/CompletableFuture<Ljava/math/BigDecimal;>;
+METHOD site.mcrelicworld.relicprison.api.SellService public,abstract sellInventoryDetailed(Ljava/util/UUID;)Ljava/util/concurrent/CompletableFuture; signature=(Ljava/util/UUID;)Ljava/util/concurrent/CompletableFuture<Lsite/mcrelicworld/relicprison/api/model/SellResult;>;
+METHOD site.mcrelicworld.relicprison.api.StatisticsService public,abstract boostersUsed(Ljava/util/UUID;)J
+METHOD site.mcrelicworld.relicprison.api.StatisticsService public,abstract itemsSold(Ljava/util/UUID;)J
+METHOD site.mcrelicworld.relicprison.api.StatisticsService public,abstract leaderboard(Ljava/lang/String;Ljava/lang/String;I)Ljava/util/concurrent/CompletableFuture; signature=(Ljava/lang/String;Ljava/lang/String;I)Ljava/util/concurrent/CompletableFuture<Ljava/util/List<Lsite/mcrelicworld/relicprison/api/model/LeaderboardEntry;>;>;
+METHOD site.mcrelicworld.relicprison.api.StatisticsService public,abstract lifetimeBlocks(Ljava/util/UUID;)J
+METHOD site.mcrelicworld.relicprison.api.StatisticsService public,abstract mineBlocks(Ljava/lang/String;)J
+METHOD site.mcrelicworld.relicprison.api.StatisticsService public,abstract playtimeSeconds(Ljava/util/UUID;)J
+METHOD site.mcrelicworld.relicprison.api.StatisticsService public,abstract prestiges(Ljava/util/UUID;)J
+METHOD site.mcrelicworld.relicprison.api.StatisticsService public,abstract rankups(Ljava/util/UUID;)J
+METHOD site.mcrelicworld.relicprison.api.event.RelicAutoSellEvent public <init>(Ljava/util/UUID;Ljava/math/BigDecimal;Ljava/math/BigDecimal;)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicAutoSellEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicAutoSellEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicBoosterActivateEvent public <init>(Ljava/lang/String;Ljava/util/UUID;Ljava/math/BigDecimal;J)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicBoosterActivateEvent public boosterId()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicBoosterActivateEvent public expiresAt()J
+METHOD site.mcrelicworld.relicprison.api.event.RelicBoosterActivateEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicBoosterActivateEvent public isCancelled()Z
+METHOD site.mcrelicworld.relicprison.api.event.RelicBoosterActivateEvent public multiplier()Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.event.RelicBoosterActivateEvent public owner()Ljava/util/UUID;
+METHOD site.mcrelicworld.relicprison.api.event.RelicBoosterActivateEvent public setCancelled(Z)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicBoosterActivateEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicBoosterExpireEvent public <init>(Ljava/lang/String;Ljava/util/UUID;)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicBoosterExpireEvent public boosterId()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicBoosterExpireEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicBoosterExpireEvent public owner()Ljava/util/UUID;
+METHOD site.mcrelicworld.relicprison.api.event.RelicBoosterExpireEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineBlockProcessEvent public <init>(Ljava/util/UUID;Ljava/lang/String;Lsite/mcrelicworld/relicprison/api/model/BlockPosition;Ljava/lang/String;)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineBlockProcessEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineBlockProcessEvent public isCancelled()Z
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineBlockProcessEvent public mineId()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineBlockProcessEvent public playerId()Ljava/util/UUID;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineBlockProcessEvent public position()Lsite/mcrelicworld/relicprison/api/model/BlockPosition;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineBlockProcessEvent public setCancelled(Z)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineBlockProcessEvent public source()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineBlockProcessEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineCreateEvent public <init>(Lsite/mcrelicworld/relicprison/api/model/MineView;)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineCreateEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineCreateEvent public isCancelled()Z
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineCreateEvent public mine()Lsite/mcrelicworld/relicprison/api/model/MineView;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineCreateEvent public setCancelled(Z)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineCreateEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineCreatedEvent public <init>(Lsite/mcrelicworld/relicprison/api/model/MineView;)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineCreatedEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineCreatedEvent public mine()Lsite/mcrelicworld/relicprison/api/model/MineView;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineCreatedEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineDeleteEvent public <init>(Lsite/mcrelicworld/relicprison/api/model/MineView;)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineDeleteEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineDeleteEvent public isCancelled()Z
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineDeleteEvent public mine()Lsite/mcrelicworld/relicprison/api/model/MineView;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineDeleteEvent public setCancelled(Z)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineDeleteEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineDeletedEvent public <init>(Lsite/mcrelicworld/relicprison/api/model/MineView;)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineDeletedEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineDeletedEvent public mine()Lsite/mcrelicworld/relicprison/api/model/MineView;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineDeletedEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetCompleteEvent public <init>(Ljava/lang/String;Ljava/lang/String;JJ)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetCompleteEvent public durationMillis()J
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetCompleteEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetCompleteEvent public mineId()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetCompleteEvent public reason()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetCompleteEvent public totalBlocks()J
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetCompleteEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetFailEvent public <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetFailEvent public error()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetFailEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetFailEvent public mineId()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetFailEvent public reason()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetFailEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetPrepareEvent public <init>(Ljava/lang/String;Ljava/lang/String;)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetPrepareEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetPrepareEvent public isCancelled()Z
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetPrepareEvent public mineId()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetPrepareEvent public reason()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetPrepareEvent public setCancelled(Z)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetPrepareEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetStartEvent public <init>(Ljava/lang/String;Ljava/lang/String;J)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetStartEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetStartEvent public mineId()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetStartEvent public reason()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetStartEvent public totalBlocks()J
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineResetStartEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineUpdateEvent public <init>(Lsite/mcrelicworld/relicprison/api/model/MineView;Lsite/mcrelicworld/relicprison/api/model/MineView;)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineUpdateEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineUpdateEvent public isCancelled()Z
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineUpdateEvent public previous()Lsite/mcrelicworld/relicprison/api/model/MineView;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineUpdateEvent public proposed()Lsite/mcrelicworld/relicprison/api/model/MineView;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineUpdateEvent public setCancelled(Z)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineUpdateEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineUpdatedEvent public <init>(Lsite/mcrelicworld/relicprison/api/model/MineView;Lsite/mcrelicworld/relicprison/api/model/MineView;)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineUpdatedEvent public current()Lsite/mcrelicworld/relicprison/api/model/MineView;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineUpdatedEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineUpdatedEvent public previous()Lsite/mcrelicworld/relicprison/api/model/MineView;
+METHOD site.mcrelicworld.relicprison.api.event.RelicMineUpdatedEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerDataLoadEvent public <init>(Lsite/mcrelicworld/relicprison/api/model/PlayerProfileView;)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerDataLoadEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerDataLoadEvent public profile()Lsite/mcrelicworld/relicprison/api/model/PlayerProfileView;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerDataLoadEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerPrestigeEvent public <init>(Ljava/util/UUID;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerPrestigeEvent public cost()Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerPrestigeEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerPrestigeEvent public isCancelled()Z
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerPrestigeEvent public newPrestige()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerPrestigeEvent public oldPrestige()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerPrestigeEvent public playerId()Ljava/util/UUID;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerPrestigeEvent public setCancelled(Z)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerPrestigeEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerProgressionRepairEvent public <init>(Ljava/util/UUID;Ljava/lang/String;Ljava/util/Set;Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Z)V signature=(Ljava/util/UUID;Ljava/lang/String;Ljava/util/Set<Ljava/lang/String;>;Ljava/util/Set<Ljava/lang/String;>;Ljava/lang/String;Ljava/lang/String;Ljava/util/List<Ljava/lang/String;>;Ljava/lang/String;Z)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerProgressionRepairEvent public automatic()Z
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerProgressionRepairEvent public expectedPrestige()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerProgressionRepairEvent public expectedRank()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerProgressionRepairEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerProgressionRepairEvent public lastKnownPlayerName()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerProgressionRepairEvent public playerId()Ljava/util/UUID;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerProgressionRepairEvent public previousDirectPrestigeGroups()Ljava/util/Set; signature=()Ljava/util/Set<Ljava/lang/String;>;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerProgressionRepairEvent public previousDirectRankGroups()Ljava/util/Set; signature=()Ljava/util/Set<Ljava/lang/String;>;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerProgressionRepairEvent public repairReason()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerProgressionRepairEvent public repairsPerformed()Ljava/util/List; signature=()Ljava/util/List<Ljava/lang/String;>;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerProgressionRepairEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerRankUpEvent public <init>(Ljava/util/UUID;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerRankUpEvent public cost()Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerRankUpEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerRankUpEvent public isCancelled()Z
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerRankUpEvent public newRank()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerRankUpEvent public oldRank()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerRankUpEvent public playerId()Ljava/util/UUID;
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerRankUpEvent public setCancelled(Z)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicPlayerRankUpEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicSellEvent public <init>(Ljava/util/UUID;Ljava/math/BigDecimal;Ljava/math/BigDecimal;)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicSellEvent public baseValue()Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.event.RelicSellEvent public finalValue()Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.event.RelicSellEvent public getHandlers()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.event.RelicSellEvent public isCancelled()Z
+METHOD site.mcrelicworld.relicprison.api.event.RelicSellEvent public playerId()Ljava/util/UUID;
+METHOD site.mcrelicworld.relicprison.api.event.RelicSellEvent public setCancelled(Z)V
+METHOD site.mcrelicworld.relicprison.api.event.RelicSellEvent public,static getHandlerList()Lorg/bukkit/event/HandlerList;
+METHOD site.mcrelicworld.relicprison.api.model.BackupView public <init>(Ljava/lang/String;Ljava/lang/String;JJLjava/lang/String;)V
+METHOD site.mcrelicworld.relicprison.api.model.BackupView public checksum()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.BackupView public createdAt()J
+METHOD site.mcrelicworld.relicprison.api.model.BackupView public id()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.BackupView public sizeBytes()J
+METHOD site.mcrelicworld.relicprison.api.model.BackupView public type()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.BackupView public,final equals(Ljava/lang/Object;)Z
+METHOD site.mcrelicworld.relicprison.api.model.BackupView public,final hashCode()I
+METHOD site.mcrelicworld.relicprison.api.model.BackupView public,final toString()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.BlockPosition public <init>(III)V
+METHOD site.mcrelicworld.relicprison.api.model.BlockPosition public x()I
+METHOD site.mcrelicworld.relicprison.api.model.BlockPosition public y()I
+METHOD site.mcrelicworld.relicprison.api.model.BlockPosition public z()I
+METHOD site.mcrelicworld.relicprison.api.model.BlockPosition public,final equals(Ljava/lang/Object;)Z
+METHOD site.mcrelicworld.relicprison.api.model.BlockPosition public,final hashCode()I
+METHOD site.mcrelicworld.relicprison.api.model.BlockPosition public,final toString()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.BoosterView public <init>(Ljava/lang/String;Ljava/util/UUID;Ljava/math/BigDecimal;JZ)V
+METHOD site.mcrelicworld.relicprison.api.model.BoosterView public expiresAt()J
+METHOD site.mcrelicworld.relicprison.api.model.BoosterView public id()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.BoosterView public multiplier()Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.model.BoosterView public owner()Ljava/util/UUID;
+METHOD site.mcrelicworld.relicprison.api.model.BoosterView public serverWide()Z
+METHOD site.mcrelicworld.relicprison.api.model.BoosterView public,final equals(Ljava/lang/Object;)Z
+METHOD site.mcrelicworld.relicprison.api.model.BoosterView public,final hashCode()I
+METHOD site.mcrelicworld.relicprison.api.model.BoosterView public,final toString()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.DiagnosticSnapshot public <init>(JLjava/util/Map;)V signature=(JLjava/util/Map<Ljava/lang/String;Ljava/lang/String;>;)V
+METHOD site.mcrelicworld.relicprison.api.model.DiagnosticSnapshot public createdAt()J
+METHOD site.mcrelicworld.relicprison.api.model.DiagnosticSnapshot public values()Ljava/util/Map; signature=()Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;
+METHOD site.mcrelicworld.relicprison.api.model.DiagnosticSnapshot public,final equals(Ljava/lang/Object;)Z
+METHOD site.mcrelicworld.relicprison.api.model.DiagnosticSnapshot public,final hashCode()I
+METHOD site.mcrelicworld.relicprison.api.model.DiagnosticSnapshot public,final toString()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.LeaderboardEntry public <init>(ILjava/util/UUID;Ljava/lang/String;Ljava/math/BigDecimal;)V
+METHOD site.mcrelicworld.relicprison.api.model.LeaderboardEntry public playerId()Ljava/util/UUID;
+METHOD site.mcrelicworld.relicprison.api.model.LeaderboardEntry public playerName()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.LeaderboardEntry public position()I
+METHOD site.mcrelicworld.relicprison.api.model.LeaderboardEntry public value()Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.model.LeaderboardEntry public,final equals(Ljava/lang/Object;)Z
+METHOD site.mcrelicworld.relicprison.api.model.LeaderboardEntry public,final hashCode()I
+METHOD site.mcrelicworld.relicprison.api.model.LeaderboardEntry public,final toString()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.MineResetState public <init>(Ljava/lang/String;Lsite/mcrelicworld/relicprison/api/model/MineResetState$State;JJ)V
+METHOD site.mcrelicworld.relicprison.api.model.MineResetState public mineId()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.MineResetState public processedBlocks()J
+METHOD site.mcrelicworld.relicprison.api.model.MineResetState public state()Lsite/mcrelicworld/relicprison/api/model/MineResetState$State;
+METHOD site.mcrelicworld.relicprison.api.model.MineResetState public totalBlocks()J
+METHOD site.mcrelicworld.relicprison.api.model.MineResetState public,final equals(Ljava/lang/Object;)Z
+METHOD site.mcrelicworld.relicprison.api.model.MineResetState public,final hashCode()I
+METHOD site.mcrelicworld.relicprison.api.model.MineResetState public,final toString()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.MineResetState$State public,static valueOf(Ljava/lang/String;)Lsite/mcrelicworld/relicprison/api/model/MineResetState$State;
+METHOD site.mcrelicworld.relicprison.api.model.MineResetState$State public,static values()[Lsite/mcrelicworld/relicprison/api/model/MineResetState$State;
+METHOD site.mcrelicworld.relicprison.api.model.MineView public,abstract accessPermission()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.MineView public,abstract compositionWeights()Ljava/util/Map; signature=()Ljava/util/Map<Ljava/lang/String;Ljava/lang/Double;>;
+METHOD site.mcrelicworld.relicprison.api.model.MineView public,abstract displayName()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.MineView public,abstract enabled()Z
+METHOD site.mcrelicworld.relicprison.api.model.MineView public,abstract id()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.MineView public,abstract maximum()Lsite/mcrelicworld/relicprison/api/model/BlockPosition;
+METHOD site.mcrelicworld.relicprison.api.model.MineView public,abstract minimum()Lsite/mcrelicworld/relicprison/api/model/BlockPosition;
+METHOD site.mcrelicworld.relicprison.api.model.MineView public,abstract requiredPrestige()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.MineView public,abstract requiredRank()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.MineView public,abstract sortOrder()I
+METHOD site.mcrelicworld.relicprison.api.model.MineView public,abstract spawnBlock()Ljava/util/Optional; signature=()Ljava/util/Optional<Lsite/mcrelicworld/relicprison/api/model/BlockPosition;>;
+METHOD site.mcrelicworld.relicprison.api.model.MineView public,abstract volume()J
+METHOD site.mcrelicworld.relicprison.api.model.MineView public,abstract worldId()Ljava/util/UUID;
+METHOD site.mcrelicworld.relicprison.api.model.MineView public,abstract worldName()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract autoBlock()Z
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract autoPickup()Z
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract autoSell()Z
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract autoSmelt()Z
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract currentPrestige()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract currentRank()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract dailyBlocks()J
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract dailyPeriod()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract dataVersion()I
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract firstJoin()J
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract lastJoin()J
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract lastName()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract lifetimeBlocks()J
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract moneyEarned()Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract monthlyBlocks()J
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract monthlyPeriod()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract uuid()Ljava/util/UUID;
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract weeklyBlocks()J
+METHOD site.mcrelicworld.relicprison.api.model.PlayerProfileView public,abstract weeklyPeriod()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.PrestigeView public <init>(Ljava/lang/String;Ljava/lang/String;ILjava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/math/BigDecimal;Ljava/lang/String;)V
+METHOD site.mcrelicworld.relicprison.api.model.PrestigeView public cost()Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.model.PrestigeView public displayName()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.PrestigeView public id()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.PrestigeView public mineId()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.PrestigeView public order()I
+METHOD site.mcrelicworld.relicprison.api.model.PrestigeView public rankCostMultiplier()Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.model.PrestigeView public sellMultiplier()Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.model.PrestigeView public,final equals(Ljava/lang/Object;)Z
+METHOD site.mcrelicworld.relicprison.api.model.PrestigeView public,final hashCode()I
+METHOD site.mcrelicworld.relicprison.api.model.PrestigeView public,final toString()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.ProgressionResult public <init>(ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;)V
+METHOD site.mcrelicworld.relicprison.api.model.ProgressionResult public code()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.ProgressionResult public cost()Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.model.ProgressionResult public newPrestige()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.ProgressionResult public newRank()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.ProgressionResult public oldPrestige()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.ProgressionResult public oldRank()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.ProgressionResult public success()Z
+METHOD site.mcrelicworld.relicprison.api.model.ProgressionResult public,final equals(Ljava/lang/Object;)Z
+METHOD site.mcrelicworld.relicprison.api.model.ProgressionResult public,final hashCode()I
+METHOD site.mcrelicworld.relicprison.api.model.ProgressionResult public,final toString()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.ProgressionResult public,static failure(Ljava/lang/String;)Lsite/mcrelicworld/relicprison/api/model/ProgressionResult;
+METHOD site.mcrelicworld.relicprison.api.model.RankView public <init>(Ljava/lang/String;Ljava/lang/String;ILjava/math/BigDecimal;Ljava/lang/String;)V
+METHOD site.mcrelicworld.relicprison.api.model.RankView public displayName()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.RankView public id()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.RankView public mineId()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.RankView public nextCost()Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.model.RankView public order()I
+METHOD site.mcrelicworld.relicprison.api.model.RankView public,final equals(Ljava/lang/Object;)Z
+METHOD site.mcrelicworld.relicprison.api.model.RankView public,final hashCode()I
+METHOD site.mcrelicworld.relicprison.api.model.RankView public,final toString()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.SellResult public <init>(ZLjava/math/BigDecimal;Ljava/math/BigDecimal;ILjava/lang/String;)V
+METHOD site.mcrelicworld.relicprison.api.model.SellResult public baseValue()Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.model.SellResult public error()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.SellResult public finalValue()Ljava/math/BigDecimal;
+METHOD site.mcrelicworld.relicprison.api.model.SellResult public itemCount()I
+METHOD site.mcrelicworld.relicprison.api.model.SellResult public success()Z
+METHOD site.mcrelicworld.relicprison.api.model.SellResult public,final equals(Ljava/lang/Object;)Z
+METHOD site.mcrelicworld.relicprison.api.model.SellResult public,final hashCode()I
+METHOD site.mcrelicworld.relicprison.api.model.SellResult public,final toString()Ljava/lang/String;
+METHOD site.mcrelicworld.relicprison.api.model.SellResult public,static failure(Ljava/lang/String;)Lsite/mcrelicworld/relicprison/api/model/SellResult;
+TYPE public class site.mcrelicworld.relicprison.api.event.RelicSellEvent extends org.bukkit.event.Event implements [org.bukkit.event.Cancellable]
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.BackupService extends java.lang.Object implements []
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.BoosterService extends java.lang.Object implements []
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.DiagnosticService extends java.lang.Object implements []
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.MineAccessService extends java.lang.Object implements []
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.MineResetService extends java.lang.Object implements []
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.MineService extends java.lang.Object implements []
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.MiningService extends java.lang.Object implements []
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.MultiplierService extends java.lang.Object implements []
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.NumberFormatService extends java.lang.Object implements []
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.PlayerDataService extends java.lang.Object implements []
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.PrestigeService extends java.lang.Object implements []
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.ProgressionService extends java.lang.Object implements []
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.RankService extends java.lang.Object implements []
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.RelicPrisonApi extends java.lang.Object implements []
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.SellService extends java.lang.Object implements []
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.StatisticsService extends java.lang.Object implements []
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.model.MineView extends java.lang.Object implements []
+TYPE public,abstract interface site.mcrelicworld.relicprison.api.model.PlayerProfileView extends java.lang.Object implements []
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicAutoSellEvent extends site.mcrelicworld.relicprison.api.event.RelicSellEvent implements []
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicBoosterActivateEvent extends org.bukkit.event.Event implements [org.bukkit.event.Cancellable]
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicBoosterExpireEvent extends org.bukkit.event.Event implements []
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicMineBlockProcessEvent extends org.bukkit.event.Event implements [org.bukkit.event.Cancellable]
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicMineCreateEvent extends org.bukkit.event.Event implements [org.bukkit.event.Cancellable]
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicMineCreatedEvent extends org.bukkit.event.Event implements []
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicMineDeleteEvent extends org.bukkit.event.Event implements [org.bukkit.event.Cancellable]
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicMineDeletedEvent extends org.bukkit.event.Event implements []
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicMineResetCompleteEvent extends org.bukkit.event.Event implements []
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicMineResetFailEvent extends org.bukkit.event.Event implements []
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicMineResetPrepareEvent extends org.bukkit.event.Event implements [org.bukkit.event.Cancellable]
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicMineResetStartEvent extends org.bukkit.event.Event implements []
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicMineUpdateEvent extends org.bukkit.event.Event implements [org.bukkit.event.Cancellable]
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicMineUpdatedEvent extends org.bukkit.event.Event implements []
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicPlayerDataLoadEvent extends org.bukkit.event.Event implements []
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicPlayerPrestigeEvent extends org.bukkit.event.Event implements [org.bukkit.event.Cancellable]
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicPlayerProgressionRepairEvent extends org.bukkit.event.Event implements []
+TYPE public,final class site.mcrelicworld.relicprison.api.event.RelicPlayerRankUpEvent extends org.bukkit.event.Event implements [org.bukkit.event.Cancellable]
+TYPE public,final,enum enum site.mcrelicworld.relicprison.api.model.MineResetState$State extends java.lang.Enum implements [] signature=Ljava/lang/Enum<Lsite/mcrelicworld/relicprison/api/model/MineResetState$State;>;
+TYPE public,final,record record site.mcrelicworld.relicprison.api.model.BackupView extends java.lang.Record implements []
+TYPE public,final,record record site.mcrelicworld.relicprison.api.model.BlockPosition extends java.lang.Record implements []
+TYPE public,final,record record site.mcrelicworld.relicprison.api.model.BoosterView extends java.lang.Record implements []
+TYPE public,final,record record site.mcrelicworld.relicprison.api.model.DiagnosticSnapshot extends java.lang.Record implements []
+TYPE public,final,record record site.mcrelicworld.relicprison.api.model.LeaderboardEntry extends java.lang.Record implements []
+TYPE public,final,record record site.mcrelicworld.relicprison.api.model.MineResetState extends java.lang.Record implements []
+TYPE public,final,record record site.mcrelicworld.relicprison.api.model.PrestigeView extends java.lang.Record implements []
+TYPE public,final,record record site.mcrelicworld.relicprison.api.model.ProgressionResult extends java.lang.Record implements []
+TYPE public,final,record record site.mcrelicworld.relicprison.api.model.RankView extends java.lang.Record implements []
+TYPE public,final,record record site.mcrelicworld.relicprison.api.model.SellResult extends java.lang.Record implements []

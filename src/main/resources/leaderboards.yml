@@ -1,0 +1,56 @@
+file-version: 1
+
+# Board IDs are used by placeholders, menus, and reward ledgers.
+boards:
+  lifetime-blocks:
+    enabled: true
+    metric: blocks
+    period: lifetime
+  daily-blocks:
+    enabled: true
+    metric: blocks
+    period: daily
+  weekly-blocks:
+    enabled: true
+    metric: blocks
+    period: weekly
+  monthly-blocks:
+    enabled: true
+    metric: blocks
+    period: monthly
+  highest-rank:
+    enabled: true
+    metric: rank
+    period: lifetime
+  highest-prestige:
+    enabled: true
+    metric: prestige
+    period: lifetime
+  money-earned:
+    enabled: true
+    metric: money
+    period: lifetime
+  items-sold:
+    enabled: true
+    metric: items_sold
+    period: lifetime
+  rankups:
+    enabled: true
+    metric: rankups
+    period: lifetime
+  prestiges:
+    enabled: true
+    metric: prestiges
+    period: lifetime
+  booster-usage:
+    enabled: true
+    metric: boosters
+    period: lifetime
+  playtime:
+    enabled: true
+    metric: playtime
+    period: lifetime
+  seasonal-blocks:
+    enabled: false
+    metric: blocks
+    period: season

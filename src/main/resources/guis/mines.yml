@@ -1,0 +1,7 @@
+file-version: 2
+title: "&8Mines &7• &bWarp Directory"
+size: 54
+contextual-mine-materials: true
+enabled-mine-material: DIAMOND_PICKAXE
+disabled-mine-material: RED_STAINED_GLASS_PANE
+filler-material: BLACK_STAINED_GLASS_PANE

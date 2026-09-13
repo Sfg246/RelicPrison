@@ -1,0 +1,10 @@
+file-version: 1
+# Loaded by the progression stage. Values are preserved from the live PrestigePlugin audit.
+prestiges:
+  coal: {display-name: Coal, cost: 16000000, sell-multiplier: 1.0, rank-cost-multiplier: 3.12, mine: coal}
+  iron: {display-name: Iron, cost: 23000000, sell-multiplier: 1.5, rank-cost-multiplier: 7.98, mine: iron}
+  gold: {display-name: Gold, cost: 43000000, sell-multiplier: 2.0, rank-cost-multiplier: 18.0, mine: gold}
+  redstone: {display-name: Redstone, cost: 58000000, sell-multiplier: 2.5, rank-cost-multiplier: 33.6, mine: redstone}
+  diamond: {display-name: Diamond, cost: 76000000, sell-multiplier: 3.0, rank-cost-multiplier: 56.7, mine: diamond}
+  emerald: {display-name: Emerald, cost: 115000000, sell-multiplier: 4.0, rank-cost-multiplier: 115.2, mine: emerald}
+  immortal: {display-name: Immortal, cost: 200000000, sell-multiplier: 5.0, rank-cost-multiplier: 247.5, mine: immortal}

@@ -1,0 +1,4 @@
+file-version: 2
+title: "&8Progression &7• &dPrestige"
+prestige-confirm-title: "&4&lConfirm Prestige"
+# Confirmation clicks revalidate profile, balance, price, max-rank status, permission, and target prestige.

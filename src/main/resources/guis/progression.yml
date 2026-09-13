@@ -1,0 +1,6 @@
+file-version: 2
+title: "&8Progression &7• &bRanks"
+# Menu contents are generated from ranks.yml so Java and Bedrock players always see current progression.
+rankup-confirm-title: "&4&lConfirm Rankup"
+rankup-max-confirm-title: "&4&lConfirm Rankup Max"
+# Confirmation clicks revalidate profile, balance, price, permissions, and target rank server-side.

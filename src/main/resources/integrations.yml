@@ -1,0 +1,43 @@
+file-version: 1
+
+vault:
+  enabled: true
+  require-economy-provider: true
+
+luckperms:
+  enabled: true
+
+worldguard:
+  enabled: true
+  region-prefix: relicmine_
+  create-regions: true
+  update-regions: true
+  delete-regions: true
+  flags:
+    deny-block-place: true
+    allow-block-break: true
+    deny-explosions: true
+    deny-fire-spread: true
+    deny-fluid-flow: true
+
+worldedit-fawe:
+  enabled: true
+
+itemsadder:
+  enabled: false
+
+advanced-enchantments:
+  enabled: false
+
+placeholderapi:
+  enabled: true
+
+geyser-floodgate:
+  awareness-enabled: true
+
+combat:
+  provider: none
+  teleport-restriction:
+    enabled: false
+    bypass-permission: relicprison.bypass.combat-teleport
+    deny-message: "&cYou cannot teleport to mines while combat-tagged."

@@ -1,0 +1,43 @@
+file-version: 1
+enabled: false
+
+settings:
+  announce-rewards: true
+  offline-message: "&dYou received pending leaderboard rewards."
+
+boards:
+  daily-blocks:
+    enabled: true
+    metric: blocks
+    period: daily
+    rewards:
+      first:
+        positions: [1]
+        money: 10000
+        announcements:
+          - "&d%player% won the daily blocks leaderboard."
+      top-three:
+        positions: [1, 2, 3]
+        items:
+          - id: DIAMOND
+            amount: 3
+  weekly-blocks:
+    enabled: true
+    metric: blocks
+    period: weekly
+    rewards:
+      first:
+        positions: [1]
+        commands:
+          - "eco give %player% 50000"
+  seasonal-blocks:
+    enabled: false
+    metric: blocks
+    period: season
+    rewards:
+      champion:
+        positions: [1]
+        boosters:
+          - scope: personal
+            multiplier: 2.0
+            duration: 1h

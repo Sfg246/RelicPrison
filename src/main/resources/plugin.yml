@@ -1,0 +1,214 @@
+name: RelicPrison
+version: '${project.version}'
+main: site.mcrelicworld.relicprison.RelicPrisonPlugin
+api-version: '1.21'
+authors: [Andrew]
+description: Clean Paper-only prison core for RelicWorld.
+load: POSTWORLD
+depend: [Vault, LuckPerms]
+softdepend: [WorldEdit, FastAsyncWorldEdit, PlaceholderAPI, ItemsAdder, WorldGuard, AdvancedEnchantments]
+libraries:
+  - org.xerial:sqlite-jdbc:3.53.2.0
+  - com.mysql:mysql-connector-j:9.7.0
+commands:
+  relicprison:
+    aliases: [rp]
+    description: RelicPrison system command.
+    usage: /relicprison <status|menu|admin|reload|validate|diagnose|diagnostic|backup|audit|repair|progression|rewards|export|import|help>
+  relicmine:
+    aliases: [rmine]
+    description: RelicPrison mine administration.
+    usage: /relicmine <subcommand|help [page]>
+  mine:
+    aliases: [mines]
+    description: Teleport to an unlocked mine.
+    usage: /mine [mine]
+  rankup:
+    description: Purchase the next rank.
+    usage: /rankup
+  rankupmax:
+    aliases: [maxrankup]
+    description: Purchase the highest affordable rank.
+    usage: /rankupmax
+  prestige:
+    description: Prestige after reaching Rank Z.
+    usage: /prestige [confirm]
+  relicrank:
+    description: Administrative rank management.
+    usage: /relicrank <info|set|promote|demote> <player> [rank]
+  relicprestige:
+    description: Administrative prestige management.
+    usage: /relicprestige <info|set|promote|demote> <player> [prestige]
+  sellall:
+    description: Sell all configured items in your inventory.
+    usage: /sellall
+  sellhand:
+    description: Sell the held item.
+    usage: /sellhand
+  sellvalue:
+    description: Estimate inventory or held-item value.
+    usage: /sellvalue [hand]
+  autosell:
+    description: Show the globally controlled AutoSell status.
+    usage: /autosell
+  autopickup:
+    description: Show the globally controlled AutoPickup status.
+    usage: /autopickup
+  autosmelt:
+    description: Show the globally controlled AutoSmelt status.
+    usage: /autosmelt
+  autoblock:
+    description: Show the globally controlled AutoBlock status.
+    usage: /autoblock
+  booster:
+    aliases: [boosters]
+    description: View or manage sell boosters.
+    usage: /booster [status|give|activate|remove|setmultiplier|list|help]
+  prison:
+    aliases: [prisonmenu, pmenu]
+    permission: relicprison.menu
+    description: Open the RelicPrison main menu.
+    usage: /prison [help [page]]
+  ranks:
+    aliases: [rankmenu]
+    permission: relicprison.menu
+    description: Open the rank progression menu.
+    usage: /ranks
+  prestiges:
+    aliases: [prestigemenu]
+    permission: relicprison.menu
+    description: Open the prestige progression menu.
+    usage: /prestiges
+  stats:
+    aliases: [prisonstats]
+    permission: relicprison.stats
+    description: Open your RelicPrison statistics.
+    usage: /stats
+  leaderboard:
+    aliases: [leaderboards, lb]
+    permission: relicprison.leaderboard
+    description: Open RelicPrison leaderboards.
+    usage: /leaderboard [metric] [period]
+  gang:
+    aliases: [gangs, g]
+    permission: relicprison.gang.use
+    description: Open and manage your prison gang.
+    usage: /gang [create|invite|invites|accept|deny|join|leave|kick|promote|demote|transfer|bank|upgrade|missions|chat|help]
+  gangchat:
+    aliases: [gc]
+    permission: relicprison.gang.chat
+    description: Send or toggle gang chat.
+    usage: /gc [message]
+  relicgang:
+    aliases: [rgang]
+    permission: relicprison.gang.admin
+    description: Administrative gang management.
+    usage: /relicgang <list|search|inspect|disband|addmember|removemember|setowner|setlevel|addlevel|setxp|addxp|setpoints|addpoints|adjustbank|rename|tag|audit|reload|help>
+permissions:
+  relicprison.sellall:
+    default: true
+  relicprison.sellhand:
+    default: true
+  relicprison.sellvalue:
+    default: true
+  relicprison.autosell:
+    default: true
+  relicprison.autopickup:
+    default: true
+  relicprison.autosmelt:
+    default: true
+  relicprison.autoblock:
+    default: true
+  relicprison.booster.status:
+    default: true
+  relicprison.booster.activate.server:
+    default: op
+  relicprison.admin.booster:
+    default: op
+  relicprison.admin.sell:
+    default: op
+  relicprison.use:
+    default: true
+  relicprison.mine.teleport:
+    default: true
+  relicprison.rankup:
+    default: true
+  relicprison.rankupmax:
+    default: true
+  relicprison.prestige:
+    default: true
+  relicprison.admin:
+    default: op
+    children:
+      relicprison.admin.reload: true
+      relicprison.admin.mine: true
+      relicprison.admin.rank: true
+      relicprison.admin.prestige: true
+      relicprison.admin.booster: true
+      relicprison.admin.sell: true
+      relicprison.admin.backup: true
+      relicprison.admin.diagnostic: true
+      relicprison.admin.diagnostic.sensitive: true
+      relicprison.admin.audit: true
+      relicprison.admin.repair: true
+      relicprison.admin.leaderboard: true
+      relicprison.admin.transfer: true
+      relicprison.admin.mine.preview: true
+      relicprison.admin.mine.reset.alerts: true
+      relicprison.gang.admin: true
+  relicprison.admin.reload:
+    default: op
+  relicprison.admin.mine:
+    default: op
+  relicprison.admin.mine.preview:
+    default: op
+  relicprison.admin.mine.reset.alerts:
+    default: op
+  relicprison.admin.rank:
+    default: op
+  relicprison.admin.prestige:
+    default: op
+  relicprison.bypass.mine-access:
+    default: op
+  relicprison.bypass.teleport-warmup:
+    default: op
+  relicprison.bypass.combat-teleport:
+    default: op
+  relicprison.bypass.build:
+    default: op
+
+
+  relicprison.menu:
+    default: true
+  relicprison.stats:
+    default: true
+  relicprison.leaderboard:
+    default: true
+  relicprison.admin.backup:
+    default: op
+  relicprison.admin.diagnostic:
+    default: op
+  relicprison.admin.diagnostic.sensitive:
+    default: op
+  relicprison.admin.audit:
+    default: op
+  relicprison.admin.repair:
+    default: op
+  relicprison.admin.leaderboard:
+    default: op
+  relicprison.admin.transfer:
+    default: op
+  relicprison.gang.use:
+    default: true
+  relicprison.gang.create:
+    default: true
+  relicprison.gang.join:
+    default: true
+  relicprison.gang.chat:
+    default: true
+  relicprison.gang.admin:
+    default: op
+  relicprison.gang.limit.20:
+    default: false
+  relicprison.gang.limit.30:
+    default: false

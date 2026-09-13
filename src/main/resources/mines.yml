@@ -1,0 +1,1595 @@
+# Generated from the legacy Prison mine data, Essentials warps, WorldGuard regions, and prisonmines/uid.dat.
+# Replace plugins/RelicPrison/mines.yml only while the server is fully stopped.
+file-version: 1
+mines:
+  a:
+    display-name: A
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -2335
+      y: 42
+      z: 8167
+    maximum:
+      x: -2301
+      y: 99
+      z: 8201
+    enabled: true
+    sort-order: 0
+    required-rank: a
+    spawn:
+      present: true
+      x: -2317.701149695416
+      y: 100.0
+      z: 8158.654107402283
+      yaw: -0.899658203125
+      pitch: -1.1998155117034912
+    composition:
+      - block: COBBLESTONE
+        weight: 100.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 300
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  b:
+    display-name: B
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: 7
+      y: 14
+      z: 880
+    maximum:
+      x: 33
+      y: 54
+      z: 906
+    enabled: true
+    sort-order: 1
+    required-rank: b
+    spawn:
+      present: true
+      x: 20.575864670131118
+      y: 55.5
+      z: 875.46433192371
+      yaw: 0.30036646127700806
+      pitch: 4.5000081062316895
+    composition:
+      - block: COBBLESTONE
+        weight: 90.0
+      - block: COAL_ORE
+        weight: 10.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 300
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  c:
+    display-name: C
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -399
+      y: 74
+      z: 1751
+    maximum:
+      x: -369
+      y: 92
+      z: 1781
+    enabled: true
+    sort-order: 2
+    required-rank: c
+    spawn:
+      present: true
+      x: -358.64967501074415
+      y: 92.0
+      z: 1742.4461859401665
+      yaw: 42.899871826171875
+      pitch: -9.599967002868652
+    composition:
+      - block: COBBLESTONE
+        weight: 70.0
+      - block: COAL_ORE
+        weight: 30.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  d:
+    display-name: D
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -405
+      y: 60
+      z: 4281
+    maximum:
+      x: -385
+      y: 95
+      z: 4301
+    enabled: true
+    sort-order: 3
+    required-rank: d
+    spawn:
+      present: true
+      x: -394.6454480783458
+      y: 97.0
+      z: 4308.551974109601
+      yaw: -179.85003662109375
+      pitch: 3.599976062774658
+    composition:
+      - block: COBBLESTONE
+        weight: 50.0
+      - block: COAL_ORE
+        weight: 50.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  e:
+    display-name: E
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -423
+      y: 57
+      z: 5396
+    maximum:
+      x: -389
+      y: 97
+      z: 5430
+    enabled: true
+    sort-order: 4
+    required-rank: e
+    spawn:
+      present: true
+      x: -429.5569149690302
+      y: 99.0
+      z: 5413.5072802482455
+      yaw: -90.14996337890625
+      pitch: 1.05000901222229
+    composition:
+      - block: COBBLESTONE
+        weight: 20.0
+      - block: COAL_ORE
+        weight: 80.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  f:
+    display-name: F
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -414
+      y: 70
+      z: 3462
+    maximum:
+      x: -390
+      y: 105
+      z: 3486
+    enabled: true
+    sort-order: 5
+    required-rank: f
+    spawn:
+      present: true
+      x: -401.4900702456878
+      y: 107.0
+      z: 3492.672998170157
+      yaw: 178.64996337890625
+      pitch: -7.799917221069336
+    composition:
+      - block: COAL_ORE
+        weight: 100.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  g:
+    display-name: G
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: 391
+      y: 34
+      z: 6152
+    maximum:
+      x: 417
+      y: 75
+      z: 6178
+    enabled: true
+    sort-order: 6
+    required-rank: g
+    spawn:
+      present: true
+      x: 423.5008657137755
+      y: 77.0
+      z: 6184.666468681407
+      yaw: 135.45001220703125
+      pitch: -5.999874114990234
+    composition:
+      - block: IRON_ORE
+        weight: 20.0
+      - block: COBBLESTONE
+        weight: 80.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  h:
+    display-name: H
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: 394
+      y: 46
+      z: 6532
+    maximum:
+      x: 418
+      y: 81
+      z: 6556
+    enabled: true
+    sort-order: 7
+    required-rank: h
+    spawn:
+      present: true
+      x: 406.4069424274598
+      y: 83.0
+      z: 6522.529873206266
+      yaw: 0.751007080078125
+      pitch: -1.7999722957611084
+    composition:
+      - block: COBBLESTONE
+        weight: 60.0
+      - block: IRON_ORE
+        weight: 40.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  i:
+    display-name: I
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -389
+      y: 14
+      z: 2783
+    maximum:
+      x: -374
+      y: 76
+      z: 2800
+    enabled: true
+    sort-order: 8
+    required-rank: i
+    spawn:
+      present: true
+      x: -352.89195820119943
+      y: 84.0
+      z: 2767.033857129481
+      yaw: 12.600013732910156
+      pitch: 1.5001277923583984
+    composition:
+      - block: IRON_ORE
+        weight: 60.0
+      - block: COBBLESTONE
+        weight: 40.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  j:
+    display-name: J
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: 25
+      y: 37
+      z: 1751
+    maximum:
+      x: 51
+      y: 75
+      z: 1777
+    enabled: true
+    sort-order: 9
+    required-rank: j
+    spawn:
+      present: true
+      x: 55.5
+      y: 77.0
+      z: 1764.5
+      yaw: 88.4996337890625
+      pitch: -3.44991135597229
+    composition:
+      - block: IRON_ORE
+        weight: 100.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  k:
+    display-name: K
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -407
+      y: 52
+      z: 5823
+    maximum:
+      x: -387
+      y: 103
+      z: 5837
+    enabled: true
+    sort-order: 10
+    required-rank: k
+    spawn:
+      present: true
+      x: -407.49563724546783
+      y: 111.0
+      z: 5797.41246888015
+      yaw: -52.349971771240234
+      pitch: -1.9499518871307373
+    composition:
+      - block: GOLD_ORE
+        weight: 20.0
+      - block: COBBLESTONE
+        weight: 80.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  l:
+    display-name: L
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: 31
+      y: 110
+      z: 7106
+    maximum:
+      x: 57
+      y: 149
+      z: 7132
+    enabled: true
+    sort-order: 11
+    required-rank: l
+    spawn:
+      present: true
+      x: 44.47917843264805
+      y: 151.0
+      z: 7100.921302051525
+      yaw: 0.600311279296875
+      pitch: 2.5500221252441406
+    composition:
+      - block: COBBLESTONE
+        weight: 60.0
+      - block: GOLD_ORE
+        weight: 40.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  m:
+    display-name: M
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: 316
+      y: 84
+      z: 7608
+    maximum:
+      x: 342
+      y: 118
+      z: 7634
+    enabled: true
+    sort-order: 12
+    required-rank: m
+    spawn:
+      present: true
+      x: 329.4763514431746
+      y: 120.0
+      z: 7640.349561195017
+      yaw: -180.0
+      pitch: 2.25012469291687
+    composition:
+      - block: GOLD_ORE
+        weight: 60.0
+      - block: COBBLESTONE
+        weight: 40.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  n:
+    display-name: N
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -400
+      y: -6
+      z: 4868
+    maximum:
+      x: -382
+      y: 48
+      z: 4886
+    enabled: true
+    sort-order: 13
+    required-rank: n
+    spawn:
+      present: true
+      x: -390.5771119243282
+      y: 50.0
+      z: 4929.318826783692
+      yaw: -179.7000274658203
+      pitch: -4.199939250946045
+    composition:
+      - block: GOLD_ORE
+        weight: 80.0
+      - block: COBBLESTONE
+        weight: 20.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  o:
+    display-name: O
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -388
+      y: 58
+      z: 2237
+    maximum:
+      x: -368
+      y: 87
+      z: 2257
+    enabled: true
+    sort-order: 14
+    required-rank: o
+    spawn:
+      present: true
+      x: -377.63863636206503
+      y: 88.0
+      z: 2226.599966927718
+      yaw: -5.0999755859375
+      pitch: 32.100013732910156
+    composition:
+      - block: GOLD_ORE
+        weight: 100.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 600
+      percentage-enabled: true
+      mined-percentage: 50.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  p:
+    display-name: P
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: 62
+      y: 50
+      z: 6161
+    maximum:
+      x: 89
+      y: 88
+      z: 6184
+    enabled: true
+    sort-order: 15
+    required-rank: p
+    spawn:
+      present: true
+      x: 49.242001428002744
+      y: 96.0
+      z: 6200.900339064239
+      yaw: -142.649169921875
+      pitch: 4.500014305114746
+    composition:
+      - block: REDSTONE_ORE
+        weight: 20.0
+      - block: COBBLESTONE
+        weight: 80.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  q:
+    display-name: Q
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -2322
+      y: 67
+      z: 7808
+    maximum:
+      x: -2288
+      y: 101
+      z: 7842
+    enabled: true
+    sort-order: 16
+    required-rank: q
+    spawn:
+      present: true
+      x: -2329.4077774436732
+      y: 102.0
+      z: 7825.532782025847
+      yaw: -89.84906005859375
+      pitch: -20.849849700927734
+    composition:
+      - block: REDSTONE_ORE
+        weight: 40.0
+      - block: COBBLESTONE
+        weight: 60.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  r:
+    display-name: R
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -2075
+      y: 39
+      z: 7902
+    maximum:
+      x: -2043
+      y: 71
+      z: 7934
+    enabled: true
+    sort-order: 17
+    required-rank: r
+    spawn:
+      present: true
+      x: -2033.5379501021619
+      y: 73.0
+      z: 7893.62602870256
+      yaw: 48.4501953125
+      pitch: -4.799893379211426
+    composition:
+      - block: COBBLESTONE
+        weight: 40.0
+      - block: REDSTONE_ORE
+        weight: 60.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  s:
+    display-name: S
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -1057
+      y: 17
+      z: 7940
+    maximum:
+      x: -1027
+      y: 60
+      z: 7970
+    enabled: true
+    sort-order: 18
+    required-rank: s
+    spawn:
+      present: true
+      x: -985.8127720023808
+      y: 63.11659029654837
+      z: 7955.404129075551
+      yaw: 90.89990997314453
+      pitch: -3.7500712871551514
+    composition:
+      - block: COBBLESTONE
+        weight: 20.0
+      - block: REDSTONE_ORE
+        weight: 80.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  t:
+    display-name: T
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -388
+      y: 66
+      z: 6156
+    maximum:
+      x: -364
+      y: 104
+      z: 6179
+    enabled: true
+    sort-order: 19
+    required-rank: t
+    spawn:
+      present: true
+      x: -408.48738509991983
+      y: 105.0
+      z: 6168.5497321118955
+      yaw: -89.10006713867188
+      pitch: -7.500024318695068
+    composition:
+      - block: REDSTONE_ORE
+        weight: 100.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 300
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  u:
+    display-name: U
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -272
+      y: 98
+      z: 7633
+    maximum:
+      x: -242
+      y: 136
+      z: 7663
+    enabled: true
+    sort-order: 20
+    required-rank: u
+    spawn:
+      present: true
+      x: -196.7236515288856
+      y: 138.0
+      z: 7638.602104632167
+      yaw: 95.8477783203125
+      pitch: -7.349782943725586
+    composition:
+      - block: DIAMOND_ORE
+        weight: 20.0
+      - block: COBBLESTONE
+        weight: 80.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  v:
+    display-name: V
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -1651
+      y: 9
+      z: 7902
+    maximum:
+      x: -1621
+      y: 52
+      z: 7932
+    enabled: true
+    sort-order: 21
+    required-rank: v
+    spawn:
+      present: true
+      x: -1635.379351340139
+      y: 54.0
+      z: 7892.4402171569845
+      yaw: 0.2999267578125
+      pitch: 4.950043678283691
+    composition:
+      - block: DIAMOND_ORE
+        weight: 40.0
+      - block: COBBLESTONE
+        weight: 60.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  w:
+    display-name: W
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: 55
+      y: 56
+      z: 537
+    maximum:
+      x: 91
+      y: 109
+      z: 573
+    enabled: true
+    sort-order: 22
+    required-rank: w
+    spawn:
+      present: true
+      x: 48.60973015705265
+      y: 111.0
+      z: 555.4085457317389
+      yaw: -90.00439453125
+      pitch: -0.5999767184257507
+    composition:
+      - block: DIAMOND_ORE
+        weight: 60.0
+      - block: COBBLESTONE
+        weight: 40.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  x:
+    display-name: X
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -80
+      y: 79
+      z: 537
+    maximum:
+      x: -44
+      y: 116
+      z: 573
+    enabled: true
+    sort-order: 23
+    required-rank: x
+    spawn:
+      present: true
+      x: -85.57153210335395
+      y: 118.0
+      z: 555.6165492060164
+      yaw: -90.30438232421875
+      pitch: 0.15013356506824493
+    composition:
+      - block: DIAMOND_ORE
+        weight: 80.0
+      - block: COBBLESTONE
+        weight: 20.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  y:
+    display-name: Y
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -222
+      y: 68
+      z: 537
+    maximum:
+      x: -186
+      y: 109
+      z: 573
+    enabled: true
+    sort-order: 24
+    required-rank: y
+    spawn:
+      present: true
+      x: -227.6278646902124
+      y: 112.5
+      z: 555.5101392450475
+      yaw: -89.9998779296875
+      pitch: 3.6000680923461914
+    composition:
+      - block: DIAMOND_ORE
+        weight: 90.0
+      - block: COBBLESTONE
+        weight: 10.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  z:
+    display-name: Z
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -364
+      y: 69
+      z: 537
+    maximum:
+      x: -328
+      y: 113
+      z: 573
+    enabled: true
+    sort-order: 25
+    required-rank: z
+    spawn:
+      present: true
+      x: -345.5121576280501
+      y: 115.0
+      z: 529.7598645285154
+      yaw: 0.6002459526062012
+      pitch: 3.6000301837921143
+    composition:
+      - block: DIAMOND_ORE
+        weight: 100.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  coal:
+    display-name: coal
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: 24
+      y: 74
+      z: 6680
+    maximum:
+      x: 54
+      y: 97
+      z: 6710
+    enabled: true
+    sort-order: 100
+    required-prestige: coal
+    spawn:
+      present: true
+      x: 34.00303667011181
+      y: 99.0
+      z: 6674.870185458734
+      yaw: 0.151031494140625
+      pitch: -21.0
+    composition:
+      - block: COAL_BLOCK
+        weight: 100.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  iron:
+    display-name: iron
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: 314
+      y: 39
+      z: 7308
+    maximum:
+      x: 348
+      y: 74
+      z: 7330
+    enabled: true
+    sort-order: 101
+    required-prestige: iron
+    spawn:
+      present: true
+      x: 353.5383723900167
+      y: 76.0
+      z: 7319.501191347281
+      yaw: 90.1500015258789
+      pitch: -0.6000162959098816
+    composition:
+      - block: IRON_BLOCK
+        weight: 100.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 300
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  gold:
+    display-name: gold
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -423
+      y: 79
+      z: 3835
+    maximum:
+      x: -397
+      y: 119
+      z: 3861
+    enabled: true
+    sort-order: 102
+    required-prestige: gold
+    spawn:
+      present: true
+      x: -409.41843452654405
+      y: 121.0
+      z: 3869.3673250809306
+      yaw: 179.70068359375
+      pitch: 10.500001907348633
+    composition:
+      - block: GOLD_BLOCK
+        weight: 100.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  redstone:
+    display-name: redstone
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: 29
+      y: 24
+      z: 1474
+    maximum:
+      x: 55
+      y: 63
+      z: 1500
+    enabled: true
+    sort-order: 103
+    required-prestige: redstone
+    spawn:
+      present: true
+      x: 63.50713989470718
+      y: 65.0
+      z: 1487.5548591284137
+      yaw: 90.30068969726562
+      pitch: -0.8998835682868958
+    composition:
+      - block: REDSTONE_BLOCK
+        weight: 100.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  diamond:
+    display-name: diamond
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -684
+      y: 7
+      z: 7679
+    maximum:
+      x: -654
+      y: 58
+      z: 7709
+    enabled: true
+    sort-order: 104
+    required-prestige: diamond
+    spawn:
+      present: true
+      x: -636.6770603830084
+      y: 61.0
+      z: 7694.615205033358
+      yaw: 90.14997100830078
+      pitch: -17.85003662109375
+    composition:
+      - block: DIAMOND_BLOCK
+        weight: 100.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  emerald:
+    display-name: emerald
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: -52
+      y: 22
+      z: 30
+    maximum:
+      x: -28
+      y: 63
+      z: 54
+    enabled: true
+    sort-order: 105
+    required-prestige: emerald
+    spawn:
+      present: true
+      x: -39.515513633463684
+      y: 65.0
+      z: 20.41171105648717
+      yaw: 0.900360107421875
+      pitch: -4.050009727478027
+    composition:
+      - block: EMERALD_BLOCK
+        weight: 100.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []
+  immortal:
+    display-name: immortal
+    world:
+      uuid: 50cdf88e-0bf9-406c-9395-9dd4e08827cb
+      name: prisonmines
+    minimum:
+      x: 386
+      y: 47
+      z: 6900
+    maximum:
+      x: 412
+      y: 87
+      z: 6926
+    enabled: true
+    sort-order: 106
+    required-prestige: immortal
+    spawn:
+      present: true
+      x: 399.5721029825191
+      y: 88.0
+      z: 6936.471366790349
+      yaw: -178.49989318847656
+      pitch: 1.8000905513763428
+    composition:
+      - block: END_STONE
+        weight: 100.0
+    reset:
+      timed-enabled: true
+      interval-seconds: 900
+      percentage-enabled: false
+      mined-percentage: 80.0
+      warning-seconds:
+        - 30
+        - 10
+        - 5
+        - 3
+        - 2
+        - 1
+      notification-scope: RADIUS
+      notification-radius: 150
+      evacuate-players: true
+      order: CHUNK_GROUPED_BOTTOM_UP
+      commands:
+        before: []
+        start: []
+        complete: []
+        failed: []

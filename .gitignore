@@ -1,0 +1,44 @@
+# Maven build output
+target/
+
+# IDE and workspace files
+.idea/
+.vscode/
+*.iml
+*.code-workspace
+.classpath
+.project
+.settings/
+out/
+
+# Compiled and packaged artifacts
+*.class
+*.jar
+*.zip
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+
+# Operating system metadata
+.DS_Store
+Thumbs.db
+
+# Local server and plugin runtime data
+run/
+server/
+plugins/
+logs/
+backups/
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Local environment files
+.env
+.env.*

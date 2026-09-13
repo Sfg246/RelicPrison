@@ -1,0 +1,26 @@
+file-version: 1
+
+type: SQLITE
+
+sqlite:
+  file: player-data.db
+
+mysql:
+  host: localhost
+  port: 3306
+  database: relicprison
+  username: relicprison
+  password: change-me
+  parameters: useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+  pool-size: 6
+
+queue:
+  capacity: 10000
+  retry-count: 3
+  retry-delay-millis: 250
+
+player-loading:
+  timeout-seconds: 15
+
+save-interval-seconds: 20
+shutdown-flush-timeout-seconds: 10

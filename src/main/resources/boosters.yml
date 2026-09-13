@@ -1,0 +1,23 @@
+file-version: 2
+settings:
+  stacking-mode: MULTIPLY_ALL
+  maximum-final-multiplier: 100.0
+  maximum-booster-multiplier: 25.0
+  maximum-duration-seconds: 2592000
+  offline-time-continues: true
+  strength-stacks: false
+  duration-stacks: true
+
+item:
+  material: NETHER_STAR
+  name: "&d&l{multiplier}x {type} Sell Booster"
+  lore:
+    - "&7Duration: &f{duration}"
+    - "&7Type: &f{type}"
+    - ""
+    - "&eRight-click to activate."
+  custom-model-data: 0
+
+permission-multipliers:
+  relicprison.multiplier.vip: 1.10
+  relicprison.multiplier.mvp: 1.20

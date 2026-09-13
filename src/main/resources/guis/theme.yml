@@ -1,0 +1,35 @@
+file-version: 1
+danger-confirm-title: "&4&lConfirm Dangerous Action"
+
+fillers:
+  neutral: GRAY_STAINED_GLASS_PANE
+  information: LIGHT_BLUE_STAINED_GLASS_PANE
+  economy: YELLOW_STAINED_GLASS_PANE
+  prestige: PURPLE_STAINED_GLASS_PANE
+  danger: RED_STAINED_GLASS_PANE
+  admin: BLACK_STAINED_GLASS_PANE
+
+navigation:
+  unavailable-page:
+    material: GRAY_DYE
+  back:
+    material: ARROW
+  close:
+    material: BARRIER
+  confirm:
+    material: LIME_WOOL
+  cancel:
+    material: RED_WOOL
+  delete:
+    material: TNT
+  search:
+    material: SPYGLASS
+
+sounds:
+  click: UI_BUTTON_CLICK
+  success: ENTITY_PLAYER_LEVELUP
+  denied: BLOCK_NOTE_BLOCK_BASS
+  teleport: ENTITY_ENDERMAN_TELEPORT
+  delete: ENTITY_ITEM_BREAK
+  volume: 0.65
+  pitch: 1.0

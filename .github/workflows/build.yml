@@ -1,0 +1,55 @@
+name: Maven Build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - name: Make Maven wrapper executable
+        run: chmod +x ./mvnw
+      - name: Verify
+        run: ./mvnw -B -ntp clean verify
+      - name: Identify production JAR
+        id: artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t jars < <(find target -maxdepth 1 -type f -name 'RelicPrison-*.jar' \
+            ! -name '*-sources.jar' ! -name '*-tests.jar' ! -name '*dependency-reduced*.jar' \
+            ! -name 'original-*.jar' | sort)
+          if [[ "${#jars[@]}" -ne 1 ]]; then
+            printf 'Expected exactly one production RelicPrison JAR, found %s:\n' "${#jars[@]}" >&2
+            printf '%s\n' "${jars[@]:-<none>}" >&2
+            exit 1
+          fi
+          echo "jar=${jars[0]}" >> "$GITHUB_OUTPUT"
+          echo "name=$(basename "${jars[0]}" .jar)" >> "$GITHUB_OUTPUT"
+      - name: Generate SHA-256
+        shell: bash
+        run: |
+          set -euo pipefail
+          sha256sum "${{ steps.artifact.outputs.jar }}" | tee SHA256.txt
+      - name: Upload plugin artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.artifact.outputs.name }}
+          path: |
+            ${{ steps.artifact.outputs.jar }}
+            SHA256.txt
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: |
+            target/surefire-reports/**
+            target/failsafe-reports/**

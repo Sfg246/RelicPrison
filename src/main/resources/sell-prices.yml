@@ -1,0 +1,30 @@
+file-version: 3
+settings:
+  allow-items-with-lore: false
+  allow-custom-items-with-lore: false
+  minimum-payout: 0.01
+  rounding-scale: 2
+
+# Loaded by the selling stage. Values are preserved from the live SellAllCustom audit.
+prices:
+  COBBLESTONE: 1.0
+  STONE: 1.0
+  COAL: 4.0
+  IRON_INGOT: 8.0
+  RAW_IRON: 7.0
+  RAW_GOLD: 9.0
+  GOLD_INGOT: 10.0
+  REDSTONE: 14.0
+  DIAMOND: 20.0
+  COAL_BLOCK: 23.21
+  IRON_BLOCK: 33.93
+  GOLD_BLOCK: 53.57
+  REDSTONE_BLOCK: 71.43
+  DIAMOND_BLOCK: 93.75
+  EMERALD_BLOCK: 142.86
+  END_STONE: 245.54
+
+# ItemsAdder items are priced by their namespaced ID.
+custom-prices: {}
+# Example:
+#  mysteryblock:mystery_block: 500.0

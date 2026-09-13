@@ -1,0 +1,29 @@
+file-version: 1
+# Loaded by the progression stage. Values are preserved from the live PrestigePlugin audit.
+ranks:
+  A: {next-cost: 55000, mine: a}
+  B: {next-cost: 68700, mine: b}
+  C: {next-cost: 81100, mine: c}
+  D: {next-cost: 95700, mine: d}
+  E: {next-cost: 112900, mine: e}
+  F: {next-cost: 133200, mine: f}
+  G: {next-cost: 157200, mine: g}
+  H: {next-cost: 185500, mine: h}
+  I: {next-cost: 219000, mine: i}
+  J: {next-cost: 258000, mine: j}
+  K: {next-cost: 304800, mine: k}
+  L: {next-cost: 360000, mine: l}
+  M: {next-cost: 424375, mine: m}
+  N: {next-cost: 500000, mine: n}
+  O: {next-cost: 600000, mine: o}
+  P: {next-cost: 700000, mine: p}
+  Q: {next-cost: 820000, mine: q}
+  R: {next-cost: 970000, mine: r}
+  S: {next-cost: 1150000, mine: s}
+  T: {next-cost: 1600000, mine: t}
+  U: {next-cost: 1900000, mine: u}
+  V: {next-cost: 2183000, mine: v}
+  W: {next-cost: 2400000, mine: w}
+  X: {next-cost: 2700000, mine: x}
+  Y: {next-cost: 3100000, mine: y}
+  Z: {next-cost: 0, mine: z}
