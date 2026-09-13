@@ -11,17 +11,19 @@ export default defineConfig({
   base,
   sitemap: { hostname: 'https://sfg246.github.io/RelicPrison/' },
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}favicon.svg` }],
+    ['link', { rel: 'icon', type: 'image/webp', href: `${base}plugin-icon.webp` }],
+    ['link', { rel: 'apple-touch-icon', href: `${base}plugin-icon.webp` }],
     ['meta', { name: 'theme-color', content: '#7c3aed' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'RelicPrison Docs' }],
     ['meta', { property: 'og:description', content: 'Build, operate, troubleshoot, and extend RelicPrison without guessing.' }],
-    ['meta', { property: 'og:image', content: 'https://sfg246.github.io/RelicPrison/social-card.svg' }],
-    ['meta', { name: 'twitter:card', content: 'summary_large_image' }]
+    ['meta', { property: 'og:image', content: 'https://sfg246.github.io/RelicPrison/plugin-icon.webp' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:image', content: 'https://sfg246.github.io/RelicPrison/plugin-icon.webp' }]
   ],
   markdown: { lineNumbers: true },
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/plugin-icon.webp',
     siteTitle: 'RelicPrison',
     search: { provider: 'local' },
     socialLinks: [{ icon: 'github', link: 'https://github.com/Sfg246/RelicPrison' }],
