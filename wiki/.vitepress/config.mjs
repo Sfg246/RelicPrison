@@ -23,7 +23,7 @@ export default defineConfig({
   ],
   markdown: { lineNumbers: true },
   themeConfig: {
-    logo: '/plugin-icon-live.webp',
+    logo: `${base}plugin-icon-live.webp`,
     siteTitle: 'RelicPrison',
     search: { provider: 'local' },
     socialLinks: [{ icon: 'github', link: 'https://github.com/Sfg246/RelicPrison' }],
