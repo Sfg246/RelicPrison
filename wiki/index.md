@@ -10,8 +10,8 @@ hero:
   text: Build the prison server without guessing.
   tagline: Beginner-first setup, searchable commands, source-generated YAML/API references, compatibility status, recovery playbooks, visual flows, and developer guidance.
   image:
-    src: /logo.svg
-    alt: RelicPrison
+    src: /plugin-icon.webp
+    alt: RelicPrison plugin icon
   actions:
     - theme: brand
       text: Start Installation
