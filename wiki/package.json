@@ -4,11 +4,15 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "docs:dev": "vitepress dev .",
-    "docs:build": "vitepress build .",
+    "docs:generate:config": "node scripts/generate-config-reference.mjs",
+    "docs:generate:api": "node scripts/generate-api-reference.mjs",
+    "docs:generate": "npm run docs:generate:config && npm run docs:generate:api",
+    "docs:dev": "npm run docs:generate && vitepress dev .",
+    "docs:build": "npm run docs:generate && vitepress build .",
     "docs:preview": "vitepress preview ."
   },
   "devDependencies": {
-    "vitepress": "^1.6.4"
+    "vitepress": "^1.6.4",
+    "yaml": "^2.8.1"
   }
 }
