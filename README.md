@@ -1,10 +1,14 @@
 # RelicPrison
 
+## 🌐 [OPEN THE RELICPRISON DOCUMENTATION WEBSITE →](https://sfg246.github.io/RelicPrison/)
+
+**Live docs:** https://sfg246.github.io/RelicPrison/
+
 RelicPrison is the Paper prison core for RelicWorld.
 
 ## Documentation
 
-The public documentation site is live at **https://sfg246.github.io/RelicPrison/** and its source lives in [`wiki/`](wiki/README.md).
+The public documentation source lives in [`wiki/`](wiki/README.md).
 
 The wiki includes:
 
