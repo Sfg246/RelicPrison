@@ -1,8 +1,8 @@
-# RelicPrison Wiki Site
+# RelicPrison Public Wiki
 
-Public-facing documentation for RelicPrison. The engineering notes in `/docs` remain the implementation/history record; this `/wiki` directory is the user-facing documentation site.
+This directory contains the public VitePress documentation site for RelicPrison.
 
-## Local preview
+## Local development
 
 ```bash
 cd wiki
@@ -14,20 +14,9 @@ npm run docs:dev
 
 ```bash
 cd wiki
-npm install
 npm run docs:build
 ```
 
-The generated static site is written to `wiki/.vitepress/dist`.
+The build regenerates source-driven YAML and Java API reference pages before VitePress compiles the site.
 
-## Source-of-truth policy
-
-Public docs should be checked against, in this order:
-
-1. Current source behavior.
-2. Current files under `src/main/resources`.
-3. Current API interfaces.
-4. Current `docs/CURRENT_STATE.md` and verification reports.
-5. Historical engineering notes only when they still match the above.
-
-Do not copy stale requirements from old stage documentation without checking the current `pom.xml`, `plugin.yml`, and runtime configuration.
+Public documentation lives here under `wiki/`. Engineering history, implementation notes, verification reports, and internal handoffs remain under the repository-level `docs/` directory.
