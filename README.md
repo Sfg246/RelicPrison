@@ -6,7 +6,9 @@
 
 RelicPrison is the Paper prison core for RelicWorld.
 
-Current release: **RelicPrison 1.0.0** for Paper 1.21.10 and Java 25.
+Current release: **RelicPrison 1.0.0** for **Java 25**, startup-tested on **Paper 1.21.5 through 26.2**.
+
+RelicPrison is compiled against Paper 1.21.10. The published 1.0.0 JAR has reached its `READY` state in automated Paper startup probes across the supported range. Paper 1.21.4 and older are not advertised as supported.
 
 ## Documentation
 
@@ -30,7 +32,7 @@ The engineering and implementation notes under [`docs/`](docs/) remain the inter
 
 ## Build
 
-RelicPrison currently builds for Paper 1.21.10 with Java 25 using the Maven Wrapper.
+RelicPrison currently compiles against Paper 1.21.10 with Java 25 using the Maven Wrapper.
 
 ```bash
 ./mvnw -B -ntp clean verify
