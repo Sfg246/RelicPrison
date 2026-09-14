@@ -76,9 +76,17 @@ jobs:
           curl --fail --retry 3 --retry-delay 2 -L \
             -o server/plugins/Vault.jar \
             'https://github.com/MilkBowl/Vault/releases/download/1.7.3/Vault.jar'
+
+          LP_JSON="$(curl --fail --retry 3 --retry-delay 2 -sS 'https://metadata.luckperms.net/data/downloads')"
+          LP_URL="$(jq -r '.downloads.bukkit' <<<"${LP_JSON}")"
+          if [[ -z "${LP_URL}" || "${LP_URL}" == 'null' ]]; then
+            echo 'Unable to resolve the current LuckPerms Bukkit download.' >&2
+            exit 1
+          fi
+          echo "LuckPerms download: ${LP_URL}"
           curl --fail --retry 3 --retry-delay 2 -L \
-            -o server/plugins/LuckPerms.jar \
-            'https://download.luckperms.net/1581/bukkit/loader/LuckPerms-Bukkit-5.4.164.jar'
+            -o server/plugins/LuckPerms.jar "${LP_URL}"
+
           curl --fail --retry 3 --retry-delay 2 -L \
             -o server/plugins/EssentialsX.jar \
             'https://repo.essentialsx.net/releases/net/essentialsx/EssentialsX/2.22.0/EssentialsX-2.22.0.jar'
