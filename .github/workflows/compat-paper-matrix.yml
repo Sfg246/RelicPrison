@@ -87,9 +87,15 @@ jobs:
           curl --fail --retry 3 --retry-delay 2 -L \
             -o server/plugins/LuckPerms.jar "${LP_URL}"
 
+          ESS_JSON="$(curl --fail --retry 3 --retry-delay 2 -sS 'https://api.modrinth.com/v2/version/nY6VN1XH')"
+          ESS_URL="$(jq -r '([.files[] | select(.primary == true)][0].url // .files[0].url)' <<<"${ESS_JSON}")"
+          if [[ -z "${ESS_URL}" || "${ESS_URL}" == 'null' ]]; then
+            echo 'Unable to resolve EssentialsX 2.22.0 from Modrinth.' >&2
+            exit 1
+          fi
+          echo "EssentialsX download: ${ESS_URL}"
           curl --fail --retry 3 --retry-delay 2 -L \
-            -o server/plugins/EssentialsX.jar \
-            'https://repo.essentialsx.net/releases/net/essentialsx/EssentialsX/2.22.0/EssentialsX-2.22.0.jar'
+            -o server/plugins/EssentialsX.jar "${ESS_URL}"
 
           printf 'eula=true\n' > server/eula.txt
           cat > server/server.properties <<'PROPS'
