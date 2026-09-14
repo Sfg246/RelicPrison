@@ -8,7 +8,7 @@ This page assumes you are starting with a Paper server and you want the safest p
 
 | Requirement | What it is for | Required? |
 |---|---|---|
-| Paper `1.21.10` | The Minecraft server platform RelicPrison targets | Yes |
+| Paper `1.21.5` through `26.2` | Startup-tested Paper range for RelicPrison 1.0.0 | Yes |
 | Java `25` | The Java runtime used and enforced by the current build | Yes |
 | Vault | Standard economy bridge | Yes |
 | A Vault economy provider | Actually stores player money | Yes |
@@ -19,6 +19,12 @@ This page assumes you are starting with a Paper server and you want the safest p
 | ItemsAdder | Custom items/blocks in supported RelicPrison systems | Optional |
 | AdvancedEnchantments | Supported mining/enchantment integration | Optional |
 | Geyser/Floodgate | Bedrock-awareness paths | Optional |
+
+::: tip Paper compatibility
+The exact RelicPrison 1.0.0 release JAR has reached `READY` in automated Paper startup probes on `1.21.5`, `1.21.6`, `1.21.7`, `1.21.8`, `1.21.9`, `1.21.10`, `1.21.11`, `26.1.1`, `26.1.2`, and `26.2` using Java 25.
+
+Paper `1.21.4` does not pass the compatibility probe with this release. Its plugin remapper fails on the Java 25 class format used by RelicPrison 1.0.0, so `1.21.4` and older versions are not advertised as supported.
+:::
 
 ::: danger Java 21 is not enough for this build
 Some older engineering notes mention Java 21. The current Maven build explicitly compiles for Java 25 and rejects a Java version outside the Java 25 range. Use Java 25 for RelicPrison 1.0.0.
@@ -138,7 +144,7 @@ You will not edit all of these on day one.
 <ul class="big-checklist">
 <li>☐ Server is stopped before changing JARs.</li>
 <li>☐ Java reports version 25.</li>
-<li>☐ Paper is 1.21.10.</li>
+<li>☐ Paper is within the supported 1.21.5–26.2 startup-tested range.</li>
 <li>☐ Vault is installed.</li>
 <li>☐ A real Vault economy provider is installed.</li>
 <li>☐ LuckPerms is installed.</li>
