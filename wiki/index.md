@@ -107,12 +107,14 @@ See [All Systems](/systems/) for the full system map and [Visual Architecture & 
 ## Current documented build
 
 <span class="status-pill">RelicPrison 1.0.0</span>
-<span class="status-pill">Paper 1.21.10</span>
+<span class="status-pill">Paper 1.21.5–26.2</span>
 <span class="status-pill">Java 25</span>
 <span class="status-pill">Maven</span>
 
+RelicPrison 1.0.0 is compiled against Paper 1.21.10 and has been automated startup-tested with the exact release JAR on Paper 1.21.5 through 26.2. Paper 1.21.4 does not pass the startup probe with this Java 25 build and is not supported.
+
 ::: warning Verification boundary
-RelicPrison 1.0.0 is the official final version, but several real-server, integration, Bedrock/Java client, crash-recovery, and multi-server tests remain explicit manual verification work. See [1.0.0 Release Notes](/releases/1.0.0) and [Known Limitations](/known-limitations).
+The compatibility matrix verifies that the exact RelicPrison 1.0.0 release JAR loads, initializes its core services/database, connects required dependencies, and reaches `READY` on the supported Paper range. It does not mean every gameplay path, GUI, optional integration, Java/Bedrock client path, crash-recovery scenario, or multi-server deployment was manually regression-tested on every Paper version. See [1.0.0 Release Notes](/releases/1.0.0) and [Known Limitations](/known-limitations).
 :::
 
 ## Real-client screenshots
