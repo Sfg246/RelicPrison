@@ -20,6 +20,23 @@ Used by time-based systems and period logic. Use a valid Java/IANA timezone such
 
 World names where normal prison behavior should be excluded.
 
+## `startup`
+
+```yaml
+startup:
+  banner: true
+  environment-details: true
+  integration-summary: true
+```
+
+| Setting | Meaning |
+|---|---|
+| `banner` | Prints the branded READY presentation once after successful initial enable |
+| `environment-details` | Includes live Paper, Minecraft, Java, OS, and storage information |
+| `integration-summary` | Includes ENABLED, DISABLED, NOT INSTALLED, and UNAVAILABLE integration states |
+
+Reloading configuration does not print the full startup banner again. Existing servers missing this section use safe `true` defaults.
+
 ## `features`
 
 ```yaml

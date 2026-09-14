@@ -28,12 +28,12 @@ public final class GuiItemBuilder {
     }
 
     public GuiItemBuilder name(String value) {
-        meta.setDisplayName(ColorUtil.color(value));
+        meta.displayName(ColorUtil.component(value));
         return this;
     }
 
     public GuiItemBuilder lore(List<String> values) {
-        meta.setLore(values.stream().map(ColorUtil::color).toList());
+        meta.lore(values.stream().map(ColorUtil::component).toList());
         return this;
     }
 
@@ -46,8 +46,7 @@ public final class GuiItemBuilder {
     }
 
     public GuiItemBuilder hideFlags() {
-        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_ADDITIONAL_TOOLTIP,
-                ItemFlag.HIDE_DYE, ItemFlag.HIDE_ARMOR_TRIM);
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_DYE, ItemFlag.HIDE_ARMOR_TRIM);
         return this;
     }
 
@@ -57,7 +56,11 @@ public final class GuiItemBuilder {
     }
 
     public GuiItemBuilder customModelData(Integer value) {
-        if (value != null) meta.setCustomModelData(value);
+        if (value != null) {
+            var customModelData = meta.getCustomModelDataComponent();
+            customModelData.setFloats(List.of(value.floatValue()));
+            meta.setCustomModelDataComponent(customModelData);
+        }
         return this;
     }
 

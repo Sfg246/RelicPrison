@@ -82,12 +82,13 @@ export default defineConfig({
         { text: 'Events', link: '/developers/events' },
         { text: 'Examples', link: '/developers/examples' }
       ]},
-      { text: 'RC6 Stage 6', items: [
+      { text: 'RelicPrison 1.0.0', items: [
         { text: 'Release Status', link: '/releases/' },
         { text: 'Changelog', link: '/changelog/' },
         { text: 'Known Limitations', link: '/known-limitations' },
         { text: 'Versioning', link: '/versions/' },
-        { text: 'RC6 Staging Matrix', link: '/releases/rc6' }
+        { text: '1.0.0 Release', link: '/releases/1.0.0' },
+        { text: 'RC6 History', link: '/releases/rc6' }
       ]},
       { text: 'Support', link: 'https://github.com/Sfg246/RelicPrison/issues' }
     ],

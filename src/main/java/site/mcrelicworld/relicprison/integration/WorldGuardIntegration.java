@@ -87,7 +87,7 @@ public final class WorldGuardIntegration implements Listener {
     public boolean available() { return available; }
     public String version() {
         org.bukkit.plugin.Plugin dependency = Bukkit.getPluginManager().getPlugin("WorldGuard");
-        return dependency == null ? "unavailable" : dependency.getDescription().getVersion();
+        return dependency == null ? "unavailable" : dependency.getPluginMeta().getVersion();
     }
 
     private boolean enabled() {

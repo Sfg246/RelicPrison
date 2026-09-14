@@ -6,7 +6,7 @@ if not errorlevel 1 (
   exit /b %errorlevel%
 )
 
-set MAVEN_VERSION=3.9.11
+set MAVEN_VERSION=3.9.16
 if "%MAVEN_USER_HOME%"=="" (
   set MAVEN_CACHE=%USERPROFILE%\.m2\wrapper\dists\apache-maven-%MAVEN_VERSION%
 ) else (

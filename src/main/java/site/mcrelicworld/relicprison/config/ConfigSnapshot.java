@@ -7,6 +7,7 @@ public record ConfigSnapshot(
         int version,
         ZoneId timezone,
         Set<String> excludedWorlds,
+        StartupConfig startup,
         FeatureToggles features,
         SelectionConfig selection,
         StorageConfig storage,
@@ -26,13 +27,13 @@ public record ConfigSnapshot(
     }
 
     public ConfigSnapshot withIntegrations(IntegrationConfig nextIntegrations) {
-        return new ConfigSnapshot(version, timezone, excludedWorlds, features.withIntegrations(nextIntegrations),
+        return new ConfigSnapshot(version, timezone, excludedWorlds, startup, features.withIntegrations(nextIntegrations),
                 selection, storage, formatting, placeholders, guiSecurity, leaderboards, logging, resetEngine, teleport, progression,
                 nextIntegrations.worldGuard(), nextIntegrations);
     }
 
     public ConfigSnapshot withLogging(LoggingConfig nextLogging) {
-        return new ConfigSnapshot(version, timezone, excludedWorlds, features, selection, storage, formatting,
+        return new ConfigSnapshot(version, timezone, excludedWorlds, startup, features, selection, storage, formatting,
                 placeholders, guiSecurity, leaderboards, nextLogging, resetEngine, teleport, progression, worldGuard,
                 integrations);
     }

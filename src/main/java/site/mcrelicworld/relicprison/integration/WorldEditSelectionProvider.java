@@ -24,7 +24,7 @@ public final class WorldEditSelectionProvider {
 
     public String version() {
         org.bukkit.plugin.Plugin plugin = Bukkit.getPluginManager().getPlugin(providerName());
-        return plugin == null ? "unavailable" : plugin.getDescription().getVersion();
+        return plugin == null ? "unavailable" : plugin.getPluginMeta().getVersion();
     }
 
     public Optional<Selection> selection(Player player) {

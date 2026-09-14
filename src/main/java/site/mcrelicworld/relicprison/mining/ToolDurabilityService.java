@@ -1,5 +1,7 @@
 package site.mcrelicworld.relicprison.mining;
 
+import io.papermc.paper.registry.RegistryAccess;
+import io.papermc.paper.registry.RegistryKey;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -17,7 +19,8 @@ public final class ToolDurabilityService {
     private final Enchantment unbreaking;
     public ToolDurabilityService(RelicPrisonPlugin plugin, MiningConfigRepository configs) {
         this.plugin = plugin; this.configs = configs;
-        this.unbreaking = Enchantment.getByKey(NamespacedKey.minecraft("unbreaking"));
+        this.unbreaking = RegistryAccess.registryAccess().getRegistry(RegistryKey.ENCHANTMENT)
+                .get(NamespacedKey.minecraft("unbreaking"));
     }
 
     public boolean canUse(Player player, ItemStack tool) {

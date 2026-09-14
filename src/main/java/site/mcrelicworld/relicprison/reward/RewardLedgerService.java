@@ -7,6 +7,7 @@ import org.bukkit.inventory.ItemStack;
 import site.mcrelicworld.relicprison.RelicPrisonPlugin;
 import site.mcrelicworld.relicprison.mining.MiningConfig;
 import site.mcrelicworld.relicprison.mining.BulkRewardTarget;
+import site.mcrelicworld.relicprison.util.ColorUtil;
 
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
@@ -138,7 +139,7 @@ public final class RewardLedgerService {
                 case CONSOLE_COMMAND, KEY_COMMAND -> deliverConsoleCommand(component);
                 case PLAYER_COMMAND -> deliverPlayerCommand(component, player);
                 case ANNOUNCEMENT -> {
-                    Bukkit.broadcastMessage(decode(component.payload()));
+                    Bukkit.broadcast(ColorUtil.legacyComponent(decode(component.payload())));
                     yield CompletableFuture.completedFuture(DeliveryResult.delivered());
                 }
                 case MONEY -> deliverMoney(component, player);

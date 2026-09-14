@@ -5,7 +5,7 @@ if command -v mvn >/dev/null 2>&1; then
   exec mvn "$@"
 fi
 
-MAVEN_VERSION="3.9.11"
+MAVEN_VERSION="3.9.16"
 MAVEN_HOME_DIR="${MAVEN_USER_HOME:-$HOME/.m2}/wrapper/dists/apache-maven-$MAVEN_VERSION"
 MAVEN_BIN="$MAVEN_HOME_DIR/apache-maven-$MAVEN_VERSION/bin/mvn"
 DIST_URL="https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/$MAVEN_VERSION/apache-maven-$MAVEN_VERSION-bin.zip"

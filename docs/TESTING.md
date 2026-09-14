@@ -33,6 +33,14 @@
 - Build artifacts: `target/RelicPrison-*.jar`.
 - Release reports: root-level `BUILD-REPORT-*`, `TEST-REPORT-*`, `MIGRATION-REPORT-*`, `KNOWN-LIMITATIONS-*`, and `STAGING-CHECKLIST-*`.
 
+## 1.0.0 Automated Evidence
+
+- Official command: `.\mvnw.cmd -B -ntp clean verify` on Java 25.
+- Exact current Surefire, Failsafe, Checkstyle, duplicate-class, and artifact-verification results are recorded in `TEST-REPORT-1.0.0.md`.
+- Startup formatting coverage verifies dynamic versioning, READY state, duration formatting, integration statuses, disabled-banner behavior, release-candidate leakage, and bounded line width.
+- SQLite test JVMs receive `--enable-native-access=ALL-UNNAMED` through both Surefire and Failsafe.
+- Real Paper/integration/client/manual staging remains separate and is not implied by automated success.
+
 ## Staging Matrix
 Real staging must record exact versions for Paper, Vault, economy provider, LuckPerms, PlaceholderAPI, WorldEdit, FAWE where used, ItemsAdder, AdvancedEnchantments, Geyser, Floodgate, Java client, and Bedrock client. A test is pending unless the real dependency was installed and exercised.
 

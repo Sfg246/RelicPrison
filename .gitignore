@@ -15,6 +15,10 @@ out/
 *.class
 *.jar
 *.zip
+node_modules/
+wiki/.vitepress/dist/
+wiki/generated/
+wiki/package-lock.json
 
 # Logs and temporary files
 *.log

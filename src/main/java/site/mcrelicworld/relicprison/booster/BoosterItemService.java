@@ -38,11 +38,15 @@ public final class BoosterItemService {
         ItemStack item = new ItemStack(config.itemMaterial());
         ItemMeta meta = item.getItemMeta();
         String type = serverWide ? "SERVER" : "PERSONAL";
-        meta.setDisplayName(ColorUtil.color(replace(config.itemName(), multiplier, durationMillis, type)));
-        List<String> lore = new ArrayList<>();
-        for (String line : config.itemLore()) lore.add(ColorUtil.color(replace(line, multiplier, durationMillis, type)));
-        meta.setLore(lore);
-        if (config.customModelData() > 0) meta.setCustomModelData(config.customModelData());
+        meta.displayName(ColorUtil.component(replace(config.itemName(), multiplier, durationMillis, type)));
+        List<net.kyori.adventure.text.Component> lore = new ArrayList<>();
+        for (String line : config.itemLore()) lore.add(ColorUtil.component(replace(line, multiplier, durationMillis, type)));
+        meta.lore(lore);
+        if (config.customModelData() > 0) {
+            var customModelData = meta.getCustomModelDataComponent();
+            customModelData.setFloats(List.of((float) config.customModelData()));
+            meta.setCustomModelDataComponent(customModelData);
+        }
         PersistentDataContainer pdc = meta.getPersistentDataContainer();
         pdc.set(typeKey, PersistentDataType.STRING, type);
         pdc.set(multiplierKey, PersistentDataType.STRING, multiplier.stripTrailingZeros().toPlainString());

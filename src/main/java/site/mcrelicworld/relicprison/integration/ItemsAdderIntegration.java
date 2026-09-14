@@ -54,7 +54,7 @@ public final class ItemsAdderIntegration {
             blockPlace = customBlockClass.getMethod("place", String.class, Location.class);
             blockRemove = customBlockClass.getMethod("remove", Location.class);
             blockIsInRegistry = customBlockClass.getMethod("isInRegistry", String.class);
-            version = dependency.getDescription().getVersion();
+            version = dependency.getPluginMeta().getVersion();
             connected = true;
             plugin.getLogger().info("ItemsAdder connected: runtime " + version + "; RelicPrison verified against 4.0.16.");
         } catch (ReflectiveOperationException | LinkageError error) {

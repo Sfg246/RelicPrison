@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import site.mcrelicworld.relicprison.RelicPrisonPlugin;
 import site.mcrelicworld.relicprison.economy.VaultEconomyAdapter;
+import site.mcrelicworld.relicprison.util.ColorUtil;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -740,7 +741,7 @@ public final class GangService {
     }
 
     private static String color(String value) {
-        return org.bukkit.ChatColor.translateAlternateColorCodes('&', value);
+        return ColorUtil.color(value);
     }
 
     private <T> CompletableFuture<T> onMainThread(java.util.function.Supplier<T> action) {

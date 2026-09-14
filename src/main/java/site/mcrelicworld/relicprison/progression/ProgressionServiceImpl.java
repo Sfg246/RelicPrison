@@ -1,7 +1,6 @@
 package site.mcrelicworld.relicprison.progression;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import site.mcrelicworld.relicprison.RelicPrisonPlugin;
 import site.mcrelicworld.relicprison.api.ProgressionService;
@@ -14,6 +13,7 @@ import site.mcrelicworld.relicprison.database.PlayerProfileRepository;
 import site.mcrelicworld.relicprison.economy.VaultEconomyAdapter;
 import site.mcrelicworld.relicprison.integration.LuckPermsIntegration;
 import site.mcrelicworld.relicprison.reward.RewardLedgerService;
+import site.mcrelicworld.relicprison.util.ColorUtil;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -1046,9 +1046,8 @@ public final class ProgressionServiceImpl implements ProgressionService {
     private void addRankupAnnouncementDraft(List<RewardLedgerService.ComponentDraft> drafts, Player player,
                                             RankDefinition oldRank, RankDefinition newRank) {
         if (!plugin.config().snapshot().progression().broadcastRankups()) return;
-        String message = ChatColor.translateAlternateColorCodes('&',
-                "&8[&5RelicPrison&8] &f" + player.getName() + " &7ranked up to &d"
-                        + newRank.displayName() + "&7!");
+        String message = ColorUtil.color("&8[&5RelicPrison&8] &f" + player.getName() + " &7ranked up to &d"
+                + newRank.displayName() + "&7!");
         drafts.add(RewardLedgerService.ComponentDraft.announcement("rankup-announcement", message,
                 System.currentTimeMillis()));
     }
@@ -1056,9 +1055,8 @@ public final class ProgressionServiceImpl implements ProgressionService {
     private void addPrestigeAnnouncementDraft(List<RewardLedgerService.ComponentDraft> drafts, Player player,
                                               PrestigeDefinition prestige) {
         if (!plugin.config().snapshot().progression().broadcastPrestiges()) return;
-        String message = ChatColor.translateAlternateColorCodes('&',
-                "&8[&5RelicPrison&8] &f" + player.getName() + " &7reached &d"
-                        + prestige.displayName() + " Prestige&7!");
+        String message = ColorUtil.color("&8[&5RelicPrison&8] &f" + player.getName() + " &7reached &d"
+                + prestige.displayName() + " Prestige&7!");
         drafts.add(RewardLedgerService.ComponentDraft.announcement("prestige-announcement", message,
                 System.currentTimeMillis()));
     }
@@ -1086,7 +1084,7 @@ public final class ProgressionServiceImpl implements ProgressionService {
         if (player.isOnline()) {
             plugin.messages().send(player, "rankup-success", placeholders);
             if (plugin.config().snapshot().progression().titleNotifications()) {
-                player.sendTitle(plugin.messages().formatPlain("rankup-title", placeholders),
+                ColorUtil.showTitle(player, plugin.messages().formatPlain("rankup-title", placeholders),
                         plugin.messages().formatPlain("rankup-subtitle", placeholders), 5, 35, 10);
             }
             if (plugin.config().snapshot().progression().soundNotifications()) {
@@ -1102,7 +1100,7 @@ public final class ProgressionServiceImpl implements ProgressionService {
         if (player.isOnline()) {
             plugin.messages().send(player, "prestige-success", placeholders);
             if (plugin.config().snapshot().progression().titleNotifications()) {
-                player.sendTitle(plugin.messages().formatPlain("prestige-title", placeholders),
+                ColorUtil.showTitle(player, plugin.messages().formatPlain("prestige-title", placeholders),
                         plugin.messages().formatPlain("prestige-subtitle", placeholders), 5, 45, 15);
             }
             if (plugin.config().snapshot().progression().soundNotifications()) {

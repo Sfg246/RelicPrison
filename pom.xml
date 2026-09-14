@@ -6,7 +6,7 @@
 
     <groupId>site.mcrelicworld</groupId>
     <artifactId>relicprison</artifactId>
-    <version>1.0.0-rc6-stage6</version>
+    <version>1.0.0</version>
     <name>RelicPrison</name>
     <description>Clean Paper-only prison core for RelicWorld.</description>
     <packaging>jar</packaging>
@@ -22,6 +22,7 @@
         <luckperms.runtime.verified>5.4.164</luckperms.runtime.verified>
         <project.build.outputTimestamp>2026-07-31T00:00:00Z</project.build.outputTimestamp>
         <asm.version>9.8</asm.version>
+        <slf4j.version>2.0.16</slf4j.version>
     </properties>
 
     <repositories>
@@ -83,6 +84,12 @@
             <groupId>org.ow2.asm</groupId>
             <artifactId>asm</artifactId>
             <version>${asm.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+            <version>${slf4j.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -175,7 +182,13 @@
                     <release>${maven.compiler.release}</release>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <parameters>true</parameters>
+                    <fork>true</fork>
                     <showWarnings>true</showWarnings>
+                    <failOnWarning>true</failOnWarning>
+                    <compilerArgs>
+                        <arg>-Xlint:deprecation</arg>
+                        <arg>-Xlint:removal</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
 
@@ -185,6 +198,7 @@
                 <version>3.5.4</version>
                 <configuration>
                     <useModulePath>false</useModulePath>
+                    <argLine>--enable-native-access=ALL-UNNAMED</argLine>
                 </configuration>
             </plugin>
 
@@ -202,6 +216,7 @@
                 </executions>
                 <configuration>
                     <useModulePath>false</useModulePath>
+                    <argLine>--enable-native-access=ALL-UNNAMED</argLine>
                 </configuration>
             </plugin>
 

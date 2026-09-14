@@ -1,7 +1,6 @@
 package site.mcrelicworld.relicprison.gui;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
@@ -276,7 +275,7 @@ public final class PrisonGuiManager {
     private Inventory create(Player player, GuiSession session, int size) {
         Holder holder = new Holder(session.menu(), session.page(), session.context(), session.id(), session.generation());
         Inventory inventory = Bukkit.createInventory(holder, size,
-                ColorUtil.color(titles.getOrDefault(session.menu(), "&5RelicPrison")));
+                ColorUtil.component(titles.getOrDefault(session.menu(), "&5RelicPrison")));
         holder.inventory(inventory);
         return inventory;
     }
@@ -398,7 +397,7 @@ public final class PrisonGuiManager {
 
     private void openGangMembers(Player player, int requestedPage) {
         plugin.gangs().members(player.getUniqueId()).whenComplete((members, error) -> sync(() -> {
-            if (error != null) { player.sendMessage(ChatColor.RED + rootMessage(error)); return; }
+            if (error != null) { player.sendMessage(ColorUtil.color("&c" + rootMessage(error))); return; }
             int pages = pages(members.size(), 36);
             int page = boundedPage(requestedPage, pages);
             GuiSession session = session(player, Menu.GANG_MEMBERS, page, "");
@@ -450,7 +449,7 @@ public final class PrisonGuiManager {
 
     private void openGangRanks(Player player, int requestedPage) {
         plugin.gangs().ranks(player.getUniqueId()).whenComplete((values, error) -> sync(() -> {
-            if (error != null) { player.sendMessage(ChatColor.RED + rootMessage(error)); return; }
+            if (error != null) { player.sendMessage(ColorUtil.color("&c" + rootMessage(error))); return; }
             int pages = pages(values.size(), 36);
             int page = boundedPage(requestedPage, pages);
             GuiSession session = session(player, Menu.GANG_RANKS, page, "");
@@ -486,7 +485,7 @@ public final class PrisonGuiManager {
         try { rankId = UUID.fromString(context); }
         catch (IllegalArgumentException error) { open(player, Menu.GANG_RANKS); return; }
         plugin.gangs().repository().rank(rankId).whenComplete((loaded, error) -> sync(() -> {
-            if (error != null || loaded.isEmpty()) { player.sendMessage(ChatColor.RED + "Rank not found"); return; }
+            if (error != null || loaded.isEmpty()) { player.sendMessage(ColorUtil.color("&cRank not found")); return; }
             GangRank rank = loaded.get();
             GuiSession session = session(player, Menu.GANG_RANK_EDIT, 0, context);
             Inventory inv = create(player, session, 27);
@@ -521,7 +520,7 @@ public final class PrisonGuiManager {
         try { rankId = UUID.fromString(context); }
         catch (IllegalArgumentException error) { open(player, Menu.GANG_RANKS); return; }
         plugin.gangs().repository().rank(rankId).whenComplete((loaded, error) -> sync(() -> {
-            if (error != null || loaded.isEmpty()) { player.sendMessage(ChatColor.RED + "Rank not found"); return; }
+            if (error != null || loaded.isEmpty()) { player.sendMessage(ColorUtil.color("&cRank not found")); return; }
             GangRank rank = loaded.get();
             GuiSession session = session(player, Menu.GANG_RANK_PERMISSIONS, 0, context);
             Inventory inv = create(player, session, 54);
@@ -590,7 +589,7 @@ public final class PrisonGuiManager {
         Gang gang = plugin.gangs().cachedGang(player.getUniqueId()).orElse(null);
         if (gang == null) { open(player, Menu.GANG); return; }
         plugin.gangs().repository().bankHistory(gang.id(), 20).whenComplete((history, error) -> sync(() -> {
-            if (error != null) { player.sendMessage(ChatColor.RED + rootMessage(error)); return; }
+            if (error != null) { player.sendMessage(ColorUtil.color("&c" + rootMessage(error))); return; }
             GuiSession session = session(player, Menu.GANG_BANK, 0, "");
             Inventory inv = create(player, session, 54);
             fill(inv, session);
@@ -616,8 +615,8 @@ public final class PrisonGuiManager {
 
     private void openGangStats(Player player) {
         plugin.gangs().statistics(player.getUniqueId()).whenComplete((stats, error) -> sync(() -> {
-            if (error != null || stats == null) { player.sendMessage(ChatColor.RED + (error == null
-                    ? "You are not in a gang" : rootMessage(error))); return; }
+            if (error != null || stats == null) { player.sendMessage(ColorUtil.color("&c" + (error == null
+                    ? "You are not in a gang" : rootMessage(error)))); return; }
             GuiSession session = session(player, Menu.GANG_STATS, 0, "");
             Inventory inv = create(player, session, 27);
             fill(inv, session);
@@ -642,7 +641,7 @@ public final class PrisonGuiManager {
 
     private void openGangContributions(Player player, int requestedPage) {
         plugin.gangs().contributions(player.getUniqueId()).whenComplete((values, error) -> sync(() -> {
-            if (error != null) { player.sendMessage(ChatColor.RED + rootMessage(error)); return; }
+            if (error != null) { player.sendMessage(ColorUtil.color("&c" + rootMessage(error))); return; }
             int pages = pages(values.size(), 36);
             int page = boundedPage(requestedPage, pages);
             GuiSession session = session(player, Menu.GANG_CONTRIBUTIONS, page, "");
@@ -695,7 +694,7 @@ public final class PrisonGuiManager {
 
     private void openGangMissions(Player player, int requestedPage) {
         plugin.gangs().missions(player.getUniqueId()).whenComplete((values, error) -> sync(() -> {
-            if (error != null) { player.sendMessage(ChatColor.RED + rootMessage(error)); return; }
+            if (error != null) { player.sendMessage(ColorUtil.color("&c" + rootMessage(error))); return; }
             int pages = pages(values.size(), 36);
             int page = boundedPage(requestedPage, pages);
             GuiSession session = session(player, Menu.GANG_MISSIONS, page, "");
@@ -723,7 +722,7 @@ public final class PrisonGuiManager {
 
     private void openGangLeaderboards(Player player, int requestedPage) {
         plugin.gangs().leaderboard("blocks", 1000).whenComplete((values, error) -> sync(() -> {
-            if (error != null) { player.sendMessage(ChatColor.RED + rootMessage(error)); return; }
+            if (error != null) { player.sendMessage(ColorUtil.color("&c" + rootMessage(error))); return; }
             int pages = pages(values.size(), 36);
             int page = boundedPage(requestedPage, pages);
             GuiSession session = session(player, Menu.GANG_LEADERBOARDS, page, "");
@@ -780,7 +779,7 @@ public final class PrisonGuiManager {
         Gang gang = plugin.gangs().cachedGang(player.getUniqueId()).orElse(null);
         if (gang == null) { open(player, Menu.GANG); return; }
         plugin.gangs().repository().audit(gang.id(), 1000).whenComplete((values, error) -> sync(() -> {
-            if (error != null) { player.sendMessage(ChatColor.RED + rootMessage(error)); return; }
+            if (error != null) { player.sendMessage(ColorUtil.color("&c" + rootMessage(error))); return; }
             int pages = pages(values.size(), 36);
             int page = boundedPage(requestedPage, pages);
             GuiSession session = session(player, Menu.GANG_AUDIT, page, "");
@@ -851,7 +850,7 @@ public final class PrisonGuiManager {
         if (profile == null) return;
         RankPlan plan = rankPlan(player, profile, currentBalance(player), maximum);
         if (plan == null) {
-            player.sendMessage(ChatColor.RED + "No affordable rankup target is available.");
+            player.sendMessage(ColorUtil.color("&cNo affordable rankup target is available."));
             open(player, Menu.PROGRESSION);
             return;
         }
@@ -922,12 +921,12 @@ public final class PrisonGuiManager {
         if (profile == null) return;
         PrestigeDefinition next = plugin.prestigeService().next(profile.currentPrestige()).orElse(null);
         if (next == null) {
-            player.sendMessage(ChatColor.RED + "You are already at the maximum prestige.");
+            player.sendMessage(ColorUtil.color("&cYou are already at the maximum prestige."));
             open(player, Menu.PRESTIGE);
             return;
         }
         if (!meetsGuiRequirements(player, profile, next.permission(), next.requirements())) {
-            player.sendMessage(ChatColor.RED + "You do not meet this prestige's requirements.");
+            player.sendMessage(ColorUtil.color("&cYou do not meet this prestige's requirements."));
             open(player, Menu.PRESTIGE);
             return;
         }
@@ -958,7 +957,7 @@ public final class PrisonGuiManager {
         if (confirmation == null || !confirmation.playerId().equals(player.getUniqueId())
                 || confirmation.expiresAt() < System.currentTimeMillis()) {
             player.closeInventory();
-            player.sendMessage(ChatColor.RED + "That confirmation expired.");
+            player.sendMessage(ColorUtil.color("&cThat confirmation expired."));
             return;
         }
         GuiSession session = session(player, Menu.DANGER_CONFIRM, 0, context);
@@ -1084,7 +1083,7 @@ public final class PrisonGuiManager {
 
     private void openLeaderboard(Player player, String context) {
         if (!plugin.config().snapshot().features().playerLeaderboards()) {
-            player.sendMessage(ChatColor.RED + "Player leaderboards are disabled by the server.");
+            player.sendMessage(ColorUtil.color("&cPlayer leaderboards are disabled by the server."));
             return;
         }
         String[] split = context.split(":", 2);
@@ -1094,7 +1093,7 @@ public final class PrisonGuiManager {
                 .whenComplete((entries, error) -> Bukkit.getScheduler().runTask(plugin, () -> {
                     if (!player.isOnline()) return;
                     if (error != null) {
-                        player.sendMessage(ChatColor.RED + "Unable to load leaderboard: " + rootMessage(error));
+                        player.sendMessage(ColorUtil.color("&cUnable to load leaderboard: " + rootMessage(error)));
                         return;
                     }
                     GuiSession session = session(player, Menu.LEADERBOARD, 0, context);
@@ -1205,7 +1204,7 @@ public final class PrisonGuiManager {
             Player online = Bukkit.getPlayer(staffId);
             if (online == null) return;
             if (error != null) {
-                online.sendMessage(ChatColor.RED + "Editor failed to load: " + rootMessage(error));
+                online.sendMessage(ColorUtil.color("&cEditor failed to load: " + rootMessage(error)));
                 openAdmin(online);
                 return;
             }
@@ -1274,7 +1273,7 @@ public final class PrisonGuiManager {
         if (editor == Editor.BOOSTERS && targetId.startsWith("booster:")) {
             ActiveBooster booster = plugin.boosterService().managedBooster(targetId.substring("booster:".length())).orElse(null);
             if (booster == null) {
-                player.sendMessage(ChatColor.RED + "That booster no longer exists.");
+                player.sendMessage(ColorUtil.color("&cThat booster no longer exists."));
                 openAdminEditorList(player, editor, 0, "");
             } else renderAdminEditorDetail(player, boosterDetails(booster));
             return;
@@ -1286,7 +1285,7 @@ public final class PrisonGuiManager {
             Player online = Bukkit.getPlayer(staffId);
             if (online == null) return;
             if (error != null) {
-                online.sendMessage(ChatColor.RED + "Entry failed to load: " + rootMessage(error));
+                online.sendMessage(ColorUtil.color("&cEntry failed to load: " + rootMessage(error)));
                 openAdminEditorList(online, editor, 0, "");
                 return;
             }
@@ -1428,7 +1427,7 @@ public final class PrisonGuiManager {
             Bukkit.getScheduler().runTask(plugin, () -> {
                 Player player = Bukkit.getPlayer(playerId);
                 if (player != null) {
-                    player.sendMessage(ChatColor.RED + "Deletion cancelled; confirmation text did not match DELETE.");
+                    player.sendMessage(ColorUtil.color("&cDeletion cancelled; confirmation text did not match DELETE."));
                     openAdminEditorDetail(player, input.editor(), input.targetId());
                 }
             });
@@ -1439,7 +1438,7 @@ public final class PrisonGuiManager {
             Bukkit.getScheduler().runTask(plugin, () -> {
                 Player player = Bukkit.getPlayer(playerId);
                 if (player != null) {
-                    player.sendMessage(ChatColor.RED + "Dangerous change cancelled; confirmation text did not match CONFIRM.");
+                    player.sendMessage(ColorUtil.color("&cDangerous change cancelled; confirmation text did not match CONFIRM."));
                     openAdminEditorDetail(player, input.editor(), input.targetId());
                 }
             });
@@ -1451,7 +1450,7 @@ public final class PrisonGuiManager {
                 Bukkit.getScheduler().runTask(plugin, () -> {
                     Player player = Bukkit.getPlayer(playerId);
                     if (player != null) {
-                        player.sendMessage(ChatColor.RED + "Reset setting change cancelled; append CONFIRM to the value.");
+                        player.sendMessage(ColorUtil.color("&cReset setting change cancelled; append CONFIRM to the value."));
                         openAdminEditorDetail(player, input.editor(), input.targetId());
                     }
                 });
@@ -1465,14 +1464,14 @@ public final class PrisonGuiManager {
     private void beginAdminInput(Player player, AdminInputSession input, String prompt) {
         adminInputs.begin(player.getUniqueId(), input, input.expiresAt());
         player.closeInventory();
-        player.sendMessage(ChatColor.GOLD + prompt);
-        player.sendMessage(ChatColor.GRAY + "Type cancel to abort. Input expires in "
-                + (inputTimeoutMillis() / 1000L) + " seconds.");
+        player.sendMessage(ColorUtil.color("&6" + prompt));
+        player.sendMessage(ColorUtil.color("&7Type cancel to abort. Input expires in "
+                + (inputTimeoutMillis() / 1000L) + " seconds."));
         long delay = Math.max(1L, (input.expiresAt() - System.currentTimeMillis() + 49L) / 50L);
         Bukkit.getScheduler().runTaskLater(plugin, () -> {
             if (!adminInputs.expire(player.getUniqueId(), input, System.currentTimeMillis())) return;
             Player online = Bukkit.getPlayer(player.getUniqueId());
-            if (online != null) online.sendMessage(ChatColor.RED + "Admin edit input expired.");
+            if (online != null) online.sendMessage(ColorUtil.color("&cAdmin edit input expired."));
         }, delay);
     }
 
@@ -1494,13 +1493,13 @@ public final class PrisonGuiManager {
                     Player player = Bukkit.getPlayer(playerId);
                     if (player == null) return;
                     if (error != null) {
-                        player.sendMessage(ChatColor.RED + "Editor save failed: " + rootMessage(error));
+                        player.sendMessage(ColorUtil.color("&cEditor save failed: " + rootMessage(error)));
                     } else {
-                        player.sendMessage((result.success() ? ChatColor.GREEN : ChatColor.RED)
-                                + "Editor result: " + result.message());
+                        player.sendMessage(ColorUtil.color((result.success() ? "&a" : "&c")
+                                + "Editor result: " + result.message()));
                     }
                     if (result != null && "stale-edit-conflict".equals(result.message()) && !parsed.targetId().isBlank()) {
-                        player.sendMessage(ChatColor.YELLOW + "Another administrator saved first; current values were reloaded.");
+                        player.sendMessage(ColorUtil.color("&eAnother administrator saved first; current values were reloaded."));
                         openAdminEditorDetail(player, input.editor(), parsed.targetId());
                     } else if (result != null && result.success() && !parsed.targetId().isBlank()
                             && !(input.operation() == Operation.SET_PROPERTY && "id".equals(input.property()))) {
@@ -1694,9 +1693,9 @@ public final class PrisonGuiManager {
         adminEditors.recordExternal(request, before, after, success, reason);
         Player player = Bukkit.getPlayer(request.staffId());
         if (player == null) return;
-        player.sendMessage((success ? ChatColor.GREEN : ChatColor.RED) + "Editor result: " + reason);
+        player.sendMessage(ColorUtil.color((success ? "&a" : "&c") + "Editor result: " + reason));
         if (!success && reason.equals("stale-edit-conflict") && !request.targetId().isBlank()) {
-            player.sendMessage(ChatColor.YELLOW + "Another administrator saved first; current values were reloaded.");
+            player.sendMessage(ColorUtil.color("&eAnother administrator saved first; current values were reloaded."));
             openAdminEditorDetail(player, Editor.BOOSTERS, request.targetId());
         } else if (success && request.operation() != Operation.DELETE && request.operation() != Operation.CREATE) {
             openAdminEditorDetail(player, Editor.BOOSTERS, request.targetId());
@@ -1815,7 +1814,7 @@ public final class PrisonGuiManager {
         if (coolingDown(player)) return;
         if (action.startsWith("deny:")) {
             play(player, theme.deniedSound());
-            player.sendMessage(ChatColor.RED + action.substring("deny:".length()));
+            player.sendMessage(ColorUtil.color("&c" + action.substring("deny:".length())));
             return;
         }
         play(player, theme.clickSound());
@@ -1847,7 +1846,7 @@ public final class PrisonGuiManager {
             player.closeInventory();
             gangRankInputs.put(player.getUniqueId(), new GangRankInput(GangRankInputType.CREATE, null,
                     "", 0, "", System.currentTimeMillis() + 60_000L));
-            player.sendMessage(ChatColor.YELLOW + "Enter: <name> <priority> <color>, or type cancel.");
+            player.sendMessage(ColorUtil.color("&eEnter: <name> <priority> <color>, or type cancel."));
             return;
         }
         if (action.startsWith("gangrank:field:")) {
@@ -1969,13 +1968,13 @@ public final class PrisonGuiManager {
     private void beginGangRankFieldInput(Player player, String field, String rawRankId) {
         UUID rankId = UUID.fromString(rawRankId);
         plugin.gangs().repository().rank(rankId).whenComplete((loaded, error) -> sync(() -> {
-            if (error != null || loaded.isEmpty()) { player.sendMessage(ChatColor.RED + "Rank not found"); return; }
+            if (error != null || loaded.isEmpty()) { player.sendMessage(ColorUtil.color("&cRank not found")); return; }
             GangRank rank = loaded.get();
             GangRankInputType type = GangRankInputType.valueOf(field.toUpperCase(Locale.ROOT));
             gangRankInputs.put(player.getUniqueId(), new GangRankInput(type, rankId, rank.displayName(),
                     rank.priority(), rank.color(), System.currentTimeMillis() + 60_000L));
             player.closeInventory();
-            player.sendMessage(ChatColor.YELLOW + "Enter the new " + field + " in chat, or type cancel.");
+            player.sendMessage(ColorUtil.color("&eEnter the new " + field + " in chat, or type cancel."));
         }));
     }
 
@@ -1994,7 +1993,7 @@ public final class PrisonGuiManager {
             Player player = Bukkit.getPlayer(playerId);
             if (player == null) return;
             if (message.equalsIgnoreCase("cancel")) {
-                player.sendMessage(ChatColor.YELLOW + "Gang rank edit cancelled.");
+                player.sendMessage(ColorUtil.color("&eGang rank edit cancelled."));
                 open(player, Menu.GANG_RANKS);
                 return;
             }
@@ -2019,7 +2018,7 @@ public final class PrisonGuiManager {
                             open(player, Menu.GANG_RANK_EDIT, 0, input.rankId().toString());
                         }));
             } catch (RuntimeException error) {
-                player.sendMessage(ChatColor.RED + rootMessage(error));
+                player.sendMessage(ColorUtil.color("&c" + rootMessage(error)));
                 open(player, Menu.GANG_RANKS);
             }
         });
@@ -2058,7 +2057,7 @@ public final class PrisonGuiManager {
                 || confirmation.expiresAt() < System.currentTimeMillis()
                 || !confirmation.submitted().compareAndSet(false, true)) {
             player.closeInventory();
-            player.sendMessage(ChatColor.RED + "That confirmation expired or was already used.");
+            player.sendMessage(ColorUtil.color("&cThat confirmation expired or was already used."));
             play(player, theme.deniedSound());
             return;
         }
@@ -2111,7 +2110,7 @@ public final class PrisonGuiManager {
         if (context == null || !context.playerId().equals(player.getUniqueId())
                 || System.currentTimeMillis() > context.expiresAt()) {
             player.closeInventory();
-            player.sendMessage(ChatColor.RED + "That confirmation expired. Please reopen the menu.");
+            player.sendMessage(ColorUtil.color("&cThat confirmation expired. Please reopen the menu."));
             return;
         }
         if (!context.submitted().compareAndSet(false, true)) return;
@@ -2119,7 +2118,7 @@ public final class PrisonGuiManager {
         if (profile == null || !safeEquals(profile.currentRank(), context.previousRank())
                 || !safeEquals(profile.currentPrestige(), context.previousPrestige())) {
             player.closeInventory();
-            player.sendMessage(ChatColor.RED + "Your progression changed. Please reopen the menu.");
+            player.sendMessage(ColorUtil.color("&cYour progression changed. Please reopen the menu."));
             return;
         }
         if (context.menu() == Menu.RANKUP_CONFIRM || context.menu() == Menu.RANKUP_MAX_CONFIRM) {
@@ -2129,7 +2128,7 @@ public final class PrisonGuiManager {
                     || plan.cost().compareTo(context.cost()) != 0 || !player.hasPermission(maximum
                     ? "relicprison.rankupmax" : "relicprison.rankup")) {
                 player.closeInventory();
-                player.sendMessage(ChatColor.RED + "That rankup price or permission is stale.");
+                player.sendMessage(ColorUtil.color("&cThat rankup price or permission is stale."));
                 return;
             }
             player.closeInventory();
@@ -2146,7 +2145,7 @@ public final class PrisonGuiManager {
                 || !player.hasPermission("relicprison.prestige")
                 || !meetsGuiRequirements(player, profile, next.permission(), next.requirements())) {
             player.closeInventory();
-            player.sendMessage(ChatColor.RED + "That prestige price or permission is stale.");
+            player.sendMessage(ColorUtil.color("&cThat prestige price or permission is stale."));
             return;
         }
         player.closeInventory();
@@ -2195,7 +2194,7 @@ public final class PrisonGuiManager {
 
     private PlayerProfile profile(Player player) {
         PlayerProfile profile = plugin.playerProfiles().cachedProfile(player.getUniqueId()).orElse(null);
-        if (profile == null) player.sendMessage(ChatColor.RED + "Your profile is still loading.");
+        if (profile == null) player.sendMessage(ColorUtil.color("&cYour profile is still loading."));
         return profile;
     }
 
@@ -2232,7 +2231,7 @@ public final class PrisonGuiManager {
 
     private ItemStack item(GuiSession session, Material material, String name, List<String> lore, String action,
                            GuiVisuals.State state) {
-        String plainName = ChatColor.stripColor(ColorUtil.color(name));
+        String plainName = ColorUtil.plain(name);
         Material effectiveMaterial = navigationMaterial(material, plainName);
         String effectiveName = navigationName(name, plainName);
         return GuiItemBuilder.of(effectiveMaterial)

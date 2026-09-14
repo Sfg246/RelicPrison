@@ -74,7 +74,7 @@ public final class AdvancedEnchantmentsIntegration {
             Class<?> api = Class.forName("net.advancedplugins.ae.api.AEAPI", false, loader);
             setIgnoreBlockEvent = api.getMethod("setIgnoreBlockEvent", Block.class);
         } catch (ReflectiveOperationException ex) {
-            plugin.getLogger().warning("AdvancedEnchantments " + advancedEnchantments.getDescription().getVersion()
+            plugin.getLogger().warning("AdvancedEnchantments " + advancedEnchantments.getPluginMeta().getVersion()
                     + " was found, but AEAPI.setIgnoreBlockEvent(Block) is unavailable.");
         }
 
@@ -90,7 +90,7 @@ public final class AdvancedEnchantmentsIntegration {
         }
 
         plugin.getLogger().info("AdvancedEnchantments connected: "
-                + advancedEnchantments.getDescription().getVersion()
+                + advancedEnchantments.getPluginMeta().getVersion()
                 + ". Synthetic mining bridge=" + bulkBridgeActive + '.');
     }
 
@@ -217,7 +217,7 @@ public final class AdvancedEnchantmentsIntegration {
     }
 
     public String version() {
-        return advancedEnchantments == null ? "unavailable" : advancedEnchantments.getDescription().getVersion();
+        return advancedEnchantments == null ? "unavailable" : advancedEnchantments.getPluginMeta().getVersion();
     }
 
     public String source(Block block) {

@@ -65,7 +65,7 @@ public final class RelicPrisonCommand implements CommandExecutor, TabCompleter {
     }
 
     private void status(CommandSender sender) {
-        plugin.messages().sectionHeader(sender, "RelicPrison " + plugin.getDescription().getVersion(), "&b");
+        plugin.messages().sectionHeader(sender, "RelicPrison " + plugin.getPluginMeta().getVersion(), "&b");
         plugin.messages().field(sender, "Lifecycle", "&b", plugin.lifecycleState());
         plugin.messages().field(sender, "Mines / Ranks / Prestiges", "&f",
                 (plugin.mineService() == null ? 0 : plugin.mineService().mines().size())

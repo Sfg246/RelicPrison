@@ -215,6 +215,6 @@ Run a private-access rehearsal with normal player accounts and no operator bypas
 - [ ] Bedrock client GUI/chat is inspected if you support Bedrock.
 - [ ] ItemsAdder/AdvancedEnchantments are tested if enabled.
 
-::: warning RC status
-The current documented build is `1.0.0-rc6-stage6`. Passing this course improves confidence, but it does not erase the explicit manual-verification items recorded for RC6.
+::: warning Verification status
+The current documented release is `1.0.0`. Passing this course improves confidence, but it does not erase the explicit manual-verification items recorded for the release.
 :::

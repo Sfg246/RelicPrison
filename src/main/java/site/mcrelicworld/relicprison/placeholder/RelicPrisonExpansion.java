@@ -42,7 +42,7 @@ public final class RelicPrisonExpansion extends PlaceholderExpansion {
 
     @Override public String getIdentifier() { return "relicprison"; }
     @Override public String getAuthor() { return "Andrew"; }
-    @Override public String getVersion() { return plugin.getDescription().getVersion(); }
+    @Override public String getVersion() { return plugin.getPluginMeta().getVersion(); }
     @Override public boolean persist() { return true; }
     @Override public boolean canRegister() { return true; }
 

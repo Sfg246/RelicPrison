@@ -31,6 +31,8 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 public final class PaperTestRegistryAccess implements RegistryAccess {
+    // Paper still requires this legacy bridge on RegistryAccess; tests use RegistryKey lookups.
+    @SuppressWarnings({"deprecation", "removal"})
     @Override public <T extends Keyed> Registry<T> getRegistry(Class<T> type) {
         return registry(type);
     }
@@ -174,7 +176,10 @@ public final class PaperTestRegistryAccess implements RegistryAccess {
         }
 
         @Override public Material getType() { return type; }
+        // Required by the mutable ItemStack test double on the pinned Paper API.
+        @SuppressWarnings("deprecation")
         @Override public void setType(Material type) { this.type = type; }
+        @Override public ItemStack withType(Material type) { return new SimpleItemStack(type, amount); }
         @Override public int getAmount() { return amount; }
         @Override public void setAmount(int amount) { this.amount = amount; }
         @Override public int getMaxStackSize() { return type.getMaxStackSize(); }

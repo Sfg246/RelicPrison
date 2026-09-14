@@ -28,6 +28,7 @@ import site.mcrelicworld.relicprison.mine.MineResetConfig;
 import site.mcrelicworld.relicprison.mine.MineServiceImpl;
 import site.mcrelicworld.relicprison.mine.composition.CompositionEntry;
 import site.mcrelicworld.relicprison.mine.composition.MineComposition;
+import site.mcrelicworld.relicprison.util.ColorUtil;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -572,13 +573,13 @@ public final class MineResetServiceImpl implements MineResetService, Listener {
             if (notification.chatNotifications()) plugin.messages().send(player, key, placeholders);
             if (notification.titleNotifications()) {
                 if (warning) {
-                    player.sendTitle(plugin.messages().formatPlain("reset-warning-title", placeholders),
+                    ColorUtil.showTitle(player, plugin.messages().formatPlain("reset-warning-title", placeholders),
                             plugin.messages().formatPlain("reset-warning-subtitle", placeholders), 5, 30, 5);
                 } else if (key.equals("reset-complete")) {
-                    player.sendTitle(plugin.messages().formatPlain("reset-complete-title", placeholders),
+                    ColorUtil.showTitle(player, plugin.messages().formatPlain("reset-complete-title", placeholders),
                             plugin.messages().formatPlain("reset-complete-subtitle", placeholders), 5, 30, 10);
                 } else if (key.equals("reset-failed")) {
-                    player.sendTitle(plugin.messages().formatPlain("reset-failed-title", placeholders),
+                    ColorUtil.showTitle(player, plugin.messages().formatPlain("reset-failed-title", placeholders),
                             plugin.messages().formatPlain("reset-failed-subtitle", placeholders), 5, 30, 10);
                 }
             }

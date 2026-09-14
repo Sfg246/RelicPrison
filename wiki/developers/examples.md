@@ -74,7 +74,7 @@ The project coordinates are:
 ```xml
 <groupId>site.mcrelicworld</groupId>
 <artifactId>relicprison</artifactId>
-<version>1.0.0-rc6-stage6</version>
+<version>1.0.0</version>
 ```
 
 Those coordinates identify the project but **do not imply the artifact is published to Maven Central or another public Maven repository**. Until a repository/release publication is intentionally created, compile against an approved local/internal artifact rather than inventing a repository URL.

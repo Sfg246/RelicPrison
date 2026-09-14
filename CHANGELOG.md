@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.0
+
+- Promoted the Maven/plugin artifact from `1.0.0-rc6-stage6` to the official `1.0.0` version without changing gameplay, commands, configuration behavior, GUIs, database behavior, or public features.
+- Added a configurable RelicPrison startup presentation that reports live environment, storage, content counts, integration state, READY state, and monotonic startup duration only after asynchronous initialization completes.
+- Replaced deprecated Paper/Bukkit production API usage with supported Paper 1.21.10 and Adventure APIs; retained only narrowly scoped compatibility overrides required by Paper test interfaces.
+- Configured Surefire and Failsafe with Java 25 native access for SQLite tests and added a test-scope SLF4J no-op provider.
+- Updated supported GitHub Actions and the Maven Wrapper, and synchronized current release, verification, limitation, and test-report documentation.
+- Verified the official artifact with the current automated suite; real Paper, integration, client, recovery, and multi-server staging items remain documented rather than claimed as complete.
+
 ## 1.0.0-rc6-stage6
 
 - Redesigned all player and staff command output with centralized RelicPrison/Gang prefixes, semantic colors, descriptive success/error text, structured status panels, useful usage blocks, and consistent value highlighting.

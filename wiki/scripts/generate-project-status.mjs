@@ -17,19 +17,18 @@ await writeFile(
 )
 
 const limitationSources = [
-  'KNOWN-LIMITATIONS-1.0.0-rc6-stage6.md',
-  'KNOWN-LIMITATIONS-1.0.0-rc6-stage6-command-ux.md'
+  'KNOWN-LIMITATIONS-1.0.0.md'
 ]
 
 let limitations = '# Known Limitations\n\n'
-limitations += '> Generated from the current RC limitation reports during every documentation build. Verify this page before production use.\n\n'
+limitations += '> Generated from the current release limitation report during every documentation build. Verify this page before production use.\n\n'
 for (const source of limitationSources) {
   const body = await read(source)
   limitations += `## ${source.replace(/^KNOWN-LIMITATIONS-/u, '').replace(/\.md$/u, '')}\n\n`
   limitations += body.replace(/^# .*?\n+/u, '')
   limitations += `\n\n_Source: \`${source}\`_\n\n`
 }
-limitations += '## What this means\n\nThe current documented build is a release candidate for controlled staging. A limitation marked here should be treated as unverified or intentionally incomplete until the repository staging matrix proves it on the real server/client/integration combination you intend to run.\n'
+limitations += '## What this means\n\nRelicPrison 1.0.0 is the official final version. A limitation marked here remains unverified or intentionally constrained until the repository staging matrix proves it on the real server/client/integration combination you intend to run.\n'
 
 await writeFile(path.join(wikiRoot, 'known-limitations.md'), limitations, 'utf8')
 

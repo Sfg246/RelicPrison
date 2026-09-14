@@ -1,7 +1,6 @@
 package site.mcrelicworld.relicprison.gui;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.World;
@@ -13,6 +12,7 @@ import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.configuration.file.YamlConfiguration;
 import site.mcrelicworld.relicprison.RelicPrisonPlugin;
 import site.mcrelicworld.relicprison.mine.MineDefinition;
+import site.mcrelicworld.relicprison.util.ColorUtil;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -61,7 +61,7 @@ public final class MineAdminGui {
     public void open(Player player) {
         MineGuiConfig active = config;
         Holder holder = new Holder();
-        Inventory inventory = Bukkit.createInventory(holder, active.size(), site.mcrelicworld.relicprison.util.ColorUtil.color(active.title()));
+        Inventory inventory = Bukkit.createInventory(holder, active.size(), ColorUtil.component(active.title()));
         holder.inventory(inventory);
         ItemStack filler = GuiItemBuilder.of(active.fillerMaterial()).name("&8 ").build();
         for (int index = 0; index < inventory.getSize(); index++) inventory.setItem(index, filler);
@@ -73,10 +73,10 @@ public final class MineAdminGui {
             List<String> lore = new ArrayList<>();
             lore.add("&7Administrative mine overview.");
             lore.add("");
-            lore.add(ChatColor.GRAY + "ID: " + ChatColor.WHITE + mine.id());
-            lore.add(ChatColor.GRAY + "World: " + ChatColor.WHITE + mine.worldName());
-            lore.add(ChatColor.GRAY + "Volume: " + ChatColor.WHITE + plugin.numbers().full(mine.volume()));
-            lore.add(ChatColor.GRAY + "Blocks: " + ChatColor.WHITE + mine.composition().entries().size());
+            lore.add("&7ID: &f" + mine.id());
+            lore.add("&7World: &f" + mine.worldName());
+            lore.add("&7Volume: &f" + plugin.numbers().full(mine.volume()));
+            lore.add("&7Blocks: &f" + mine.composition().entries().size());
             lore.add("");
             lore.add(mine.enabled() ? "&aEnabled" : "&cDisabled");
             lore.add("&eClick to teleport to the mine spawn.");
@@ -107,7 +107,7 @@ public final class MineAdminGui {
             return;
         }
         if (item == null || !item.hasItemMeta()) return;
-        if (item.getType() == Material.BARRIER && ChatColor.stripColor(item.getItemMeta().getDisplayName())
+        if (item.getType() == Material.BARRIER && ColorUtil.plain(item.getItemMeta().displayName())
                 .equalsIgnoreCase("Close")) {
             player.closeInventory();
             return;
@@ -118,7 +118,7 @@ public final class MineAdminGui {
         if (mine == null) return;
         World world = Bukkit.getWorld(mine.worldId());
         if (world == null) {
-            player.sendMessage(ChatColor.RED + "The mine world is not loaded.");
+            player.sendMessage(ColorUtil.color("&cThe mine world is not loaded."));
             return;
         }
         if (mine.spawn() != null) player.teleport(mine.spawn().toLocation(world));

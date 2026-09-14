@@ -1,8 +1,4 @@
-# Known Limitations
-
-> Generated from the current release limitation report during every documentation build. Verify this page before production use.
-
-## 1.0.0
+# Known Limitations - 1.0.0
 
 - No real Paper 1.21.10 server or Java/Bedrock/Geyser client was available during this release-polish pass.
 - The new READY-only startup presentation is unit-tested but still requires real Paper console rendering and integration-state verification.
@@ -15,10 +11,3 @@
 - Multi-server gang, database outage/reconnect, backup restore, rollback, ItemsAdder, AdvancedEnchantments, Vault, LuckPerms, and client verification remains pending.
 
 RelicPrison 1.0.0 is the official final version. This version label does not claim that the unperformed environment-specific staging items above passed.
-
-
-_Source: `KNOWN-LIMITATIONS-1.0.0.md`_
-
-## What this means
-
-RelicPrison 1.0.0 is the official final version. A limitation marked here remains unverified or intentionally constrained until the repository staging matrix proves it on the real server/client/integration combination you intend to run.

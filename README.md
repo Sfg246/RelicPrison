@@ -6,6 +6,8 @@
 
 RelicPrison is the Paper prison core for RelicWorld.
 
+Current release: **RelicPrison 1.0.0** for Paper 1.21.10 and Java 25.
+
 ## Documentation
 
 The public documentation source lives in [`wiki/`](wiki/README.md).
@@ -33,6 +35,14 @@ RelicPrison currently builds for Paper 1.21.10 with Java 25 using the Maven Wrap
 ```bash
 ./mvnw -B -ntp clean verify
 ```
+
+Servers using the SQLite backend on Java 25 should start Paper with native access enabled for `sqlite-jdbc`:
+
+```bash
+java --enable-native-access=ALL-UNNAMED -jar paper.jar --nogui
+```
+
+That JVM permission must be granted when Paper starts; a plugin cannot grant it after launch.
 
 ## Documentation build
 

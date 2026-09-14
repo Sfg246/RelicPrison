@@ -1,7 +1,6 @@
 package site.mcrelicworld.relicprison.command;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.command.Command;
@@ -20,6 +19,7 @@ import site.mcrelicworld.relicprison.mine.composition.MineComposition;
 import site.mcrelicworld.relicprison.selection.SelectionManager;
 import site.mcrelicworld.relicprison.selection.SelectionMode;
 import site.mcrelicworld.relicprison.selection.SelectionSession;
+import site.mcrelicworld.relicprison.util.ColorUtil;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -111,8 +111,8 @@ public final class RelicMineCommand implements CommandExecutor, TabCompleter {
         Player player = requirePlayer(sender);
         ItemStack wand = new ItemStack(plugin.config().snapshot().selection().wandMaterial());
         ItemMeta meta = wand.getItemMeta();
-        meta.setDisplayName(ChatColor.GOLD + "RelicPrison Mine Selector");
-        meta.setLore(List.of(ChatColor.YELLOW + "Left-click: point 1", ChatColor.YELLOW + "Right-click: point 2"));
+        meta.displayName(ColorUtil.component("&6RelicPrison Mine Selector"));
+        meta.lore(List.of(ColorUtil.component("&eLeft-click: point 1"), ColorUtil.component("&eRight-click: point 2")));
         meta.getPersistentDataContainer().set(plugin.wandListener().wandKey(), PersistentDataType.BYTE, (byte) 1);
         wand.setItemMeta(meta);
         player.getInventory().addItem(wand);

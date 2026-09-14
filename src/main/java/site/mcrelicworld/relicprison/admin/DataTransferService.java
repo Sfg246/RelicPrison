@@ -31,7 +31,7 @@ public final class DataTransferService {
                     YamlConfiguration yaml = new YamlConfiguration();
                     yaml.set("format-version", 1);
                     yaml.set("exported-at", System.currentTimeMillis());
-                    yaml.set("source-plugin-version", plugin.getDescription().getVersion());
+                    yaml.set("source-plugin-version", plugin.getPluginMeta().getVersion());
                     try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM rp_player_profiles WHERE uuid=?")) {
                         statement.setString(1, playerId.toString());
                         try (ResultSet result = statement.executeQuery()) {

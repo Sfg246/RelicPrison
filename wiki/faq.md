@@ -92,7 +92,7 @@ Preserve logs and transaction/reward records. Do not delete database rows to “
 
 ## Can I use this on production right now?
 
-The currently documented `1.0.0-rc6-stage6` build is a controlled staging release candidate, not final `1.0.0`. Check [Release Status](/releases/) and [Known Limitations](/known-limitations) before deciding where to run it.
+`1.0.0` is the official final version, but automated success does not replace the still-pending real-server and integration matrix. Check [Release Status](/releases/) and [Known Limitations](/known-limitations) before deciding where to run it.
 
 ## I still cannot find the answer
 

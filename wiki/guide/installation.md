@@ -21,7 +21,7 @@ This page assumes you are starting with a Paper server and you want the safest p
 | Geyser/Floodgate | Bedrock-awareness paths | Optional |
 
 ::: danger Java 21 is not enough for this build
-Some older engineering notes mention Java 21. The current Maven build explicitly compiles for Java 25 and rejects a Java version outside the Java 25 range. Use Java 25 for the current RC6 build.
+Some older engineering notes mention Java 21. The current Maven build explicitly compiles for Java 25 and rejects a Java version outside the Java 25 range. Use Java 25 for RelicPrison 1.0.0.
 :::
 
 ## Step 1: stop the server
@@ -38,7 +38,7 @@ Put these in your server's `plugins/` directory:
 Vault.jar
 LuckPerms-Bukkit.jar
 <your economy plugin>.jar
-RelicPrison-1.0.0-rc6-stage6.jar
+RelicPrison-1.0.0.jar
 ```
 
 Your economy plugin is separate from Vault. Vault is a bridge. It does **not** create an economy by itself.
@@ -60,6 +60,16 @@ RelicPrison
 ```
 
 Add PlaceholderAPI, WorldGuard, FAWE, ItemsAdder, AdvancedEnchantments, and Geyser/Floodgate after the core server boots correctly.
+
+## Java 25 and SQLite native access
+
+If `storage.yml` uses SQLite, start Paper with the Java 25 native-access permission required by `sqlite-jdbc`:
+
+```text
+java --enable-native-access=ALL-UNNAMED -jar paper.jar --nogui
+```
+
+This flag must be supplied when the server JVM starts. RelicPrison cannot relaunch Paper or grant native access to itself after startup.
 
 ## Step 4: start Paper once
 

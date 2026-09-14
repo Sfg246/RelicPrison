@@ -17,6 +17,7 @@ public final class CombatTagIntegration {
 
     private final RelicPrisonPlugin plugin;
     private Plugin dependency;
+    private boolean detected;
     private String provider = "none";
     private boolean warnedUnsupported;
 
@@ -29,11 +30,13 @@ public final class CombatTagIntegration {
         warnedUnsupported = false;
         provider = normalize(config.combatProvider());
         dependency = null;
+        detected = false;
         if (!config.combatTeleportRestrictionEnabled() || provider.equals("none")) {
             plugin.structuredLogger().debug(LogCategory.INTEGRATION, "Combat-tag mine teleport restriction disabled.");
             return;
         }
         dependency = resolveProvider(provider);
+        detected = dependency != null;
         if (dependency == null || !dependency.isEnabled()) {
             plugin.structuredLogger().warning(LogCategory.INTEGRATION,
                     "Combat-tag provider " + provider + " is configured but unavailable; mine teleport restriction remains inactive.");
@@ -41,7 +44,7 @@ public final class CombatTagIntegration {
             return;
         }
         plugin.structuredLogger().info(LogCategory.INTEGRATION,
-                "Combat-tag provider connected: " + dependency.getName() + " " + dependency.getDescription().getVersion() + ".");
+                "Combat-tag provider connected: " + dependency.getName() + " " + dependency.getPluginMeta().getVersion() + ".");
     }
 
     public boolean blocksMineTeleport(Player player) {
@@ -64,12 +67,16 @@ public final class CombatTagIntegration {
         return dependency != null && dependency.isEnabled();
     }
 
+    public boolean detected() {
+        return detected;
+    }
+
     public String provider() {
         return provider;
     }
 
     public String version() {
-        return dependency == null ? "unavailable" : dependency.getDescription().getVersion();
+        return dependency == null ? "unavailable" : dependency.getPluginMeta().getVersion();
     }
 
     private Plugin resolveProvider(String configured) {

@@ -27,7 +27,7 @@
 
 ## Automated Verification
 - Repository tests cover progression transaction duplicate protection, progression refund claim races, reward ledger atomic claims and lease recovery, leaderboard atomic finalization rows/packages, leaderboard recovery/finalization resumption, Block Event atomic trigger/package creation, Block Event logical duplicate-claim prevention, bulk mining transaction states/snapshots/recovery visibility, Block Event chance math, backup traversal/absolute path rejection, redaction, and configuration parsing.
-- The latest Stage 6 verification count is recorded in `TEST-REPORT-1.0.0-rc6-stage6.md` after the final clean test/package pass.
+- The official 1.0.0 automated verification count is recorded in `TEST-REPORT-1.0.0.md` after the final clean verify pass.
 - Static guardrail tests remain as secondary checks and are not treated as completion proof.
 
 ## Manual Verification Pending
@@ -58,6 +58,6 @@
 - No claim of production readiness is made from compilation alone.
 
 ## Recommended Version
-Use `RelicPrison 1.0.0-rc6-stage6` for controlled Paper staging only. Do not promote it to final `1.0.0` until the real Paper/integration/client matrix passes.
+The current release is `RelicPrison 1.0.0`. Automated verification passes, while the real Paper/integration/client matrix above remains explicitly required before an operator treats a deployment as production-certified.
 
 

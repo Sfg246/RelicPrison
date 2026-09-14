@@ -104,6 +104,9 @@ import site.mcrelicworld.relicprison.selling.SellServiceImpl;
 import site.mcrelicworld.relicprison.selling.SellSummaryService;
 import site.mcrelicworld.relicprison.selection.WandListener;
 import site.mcrelicworld.relicprison.statistics.StatisticsServiceImpl;
+import site.mcrelicworld.relicprison.startup.StartupReporter;
+import site.mcrelicworld.relicprison.startup.StartupReporter.Integration;
+import site.mcrelicworld.relicprison.startup.StartupReporter.StartupReport;
 import site.mcrelicworld.relicprison.teleport.MineTeleportService;
 
 import java.util.List;
@@ -169,8 +172,10 @@ public final class RelicPrisonPlugin extends JavaPlugin {
     private RewardLedgerService rewardLedger;
     private final PerformanceMetrics performanceMetrics = new PerformanceMetrics();
     private int autosaveTaskId = -1;
+    private long startupStartedNanos;
 
     @Override public void onEnable() {
+        startupStartedNanos = System.nanoTime();
         lifecycleState = PluginLifecycleState.BOOTSTRAPPING;
         try {
             if (!getDataFolder().exists() && !getDataFolder().mkdirs()) throw new IllegalStateException("Unable to create plugin data folder");
@@ -339,7 +344,7 @@ public final class RelicPrisonPlugin extends JavaPlugin {
 
             RelicPrisonApi api = new RelicPrisonApiService(mineService, mineResets, mineAccess, rankService,
                     prestigeService, progression, playerProfiles, sellService, multiplierService, boosterService,
-                    miningService, statistics, backups, diagnostics, numberFormatter, getDescription().getVersion());
+                    miningService, statistics, backups, diagnostics, numberFormatter, getPluginMeta().getVersion());
             Bukkit.getServicesManager().register(RelicPrisonApi.class, api, this, ServicePriority.Normal);
 
             long saveTicks = snapshot.storage().saveIntervalSeconds() * 20L;
@@ -353,12 +358,60 @@ public final class RelicPrisonPlugin extends JavaPlugin {
             readyFuture.complete(null);
             for (org.bukkit.entity.Player player : Bukkit.getOnlinePlayers()) loadProfileWhenReady(player);
 
-            structuredLogger.info(LogCategory.STARTUP, "RelicPrison " + getDescription().getVersion() + " enabled with "
-                    + mineService.mines().size() + " mines, " + rankService.ranks().size() + " ranks, and "
-                    + prestigeService.prestiges().size() + " prestiges.");
+            reportReady(snapshot);
         } catch (Exception ex) {
             failStartup("RelicPrison could not activate Bukkit-facing services", ex);
         }
+    }
+
+    private void reportReady(ConfigSnapshot snapshot) {
+        IntegrationConfig integrations = snapshot.integrations();
+        boolean combatConfigured = integrations.combatTeleportRestrictionEnabled()
+                && !"none".equalsIgnoreCase(integrations.combatProvider());
+        List<Integration> statuses = List.of(
+                integration("Vault", integrations.vaultEnabled(), installed("Vault"), economy.connected()),
+                integration("LuckPerms", integrations.luckPermsEnabled(), installed("LuckPerms"), luckPerms.connected()),
+                integration("PlaceholderAPI", integrations.placeholderApiEnabled(), installed("PlaceholderAPI"),
+                        placeholderRegistered),
+                integration("ItemsAdder", integrations.itemsAdderEnabled(), installed("ItemsAdder"),
+                        itemsAdder.connected()),
+                integration("AdvancedEnchantments", integrations.advancedEnchantmentsEnabled(),
+                        installed("AdvancedEnchantments"), advancedEnchantments.connected()),
+                integration("WorldEdit / FAWE", integrations.worldEditFaweEnabled(),
+                        installed("WorldEdit", "FastAsyncWorldEdit"), worldEdit.available()),
+                integration("WorldGuard", integrations.worldGuardEnabled(), installed("WorldGuard"),
+                        worldGuard.available()),
+                integration("Combat integration", combatConfigured, combatTags.detected(), combatTags.connected())
+        );
+        StartupReporter.report(getLogger(), new StartupReport(
+                getPluginMeta().getVersion(),
+                Bukkit.getName() + " " + Bukkit.getBukkitVersion(),
+                Bukkit.getMinecraftVersion(),
+                System.getProperty("java.version", "unknown"),
+                System.getProperty("os.name", "unknown") + " " + System.getProperty("os.version", "unknown"),
+                storageName(snapshot),
+                mineService.mines().size(),
+                rankService.ranks().size(),
+                prestigeService.prestiges().size(),
+                statuses,
+                System.nanoTime() - startupStartedNanos
+        ), snapshot.startup());
+    }
+
+    private Integration integration(String name, boolean configured, boolean installed, boolean connected) {
+        return new Integration(name, StartupReporter.status(configured, installed, connected));
+    }
+
+    private boolean installed(String... names) {
+        for (String name : names) {
+            if (Bukkit.getPluginManager().getPlugin(name) != null) return true;
+        }
+        return false;
+    }
+
+    private static String storageName(ConfigSnapshot snapshot) {
+        String name = snapshot.storage().type().name().toLowerCase(Locale.ROOT);
+        return Character.toUpperCase(name.charAt(0)) + name.substring(1);
     }
 
     private void recoverAfterDatabaseReconnect() {

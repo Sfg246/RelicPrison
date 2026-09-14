@@ -98,7 +98,7 @@ public final class BackupServiceImpl implements BackupService {
                     }
                     if (!logicalDump.isBlank()) addText(zip, "database-export.sql", logicalDump);
                     addText(zip, "backup-meta.txt", "id=" + id + "\ntype=" + type + "\ncreated-at=" + created
-                            + "\nplugin-version=" + plugin.getDescription().getVersion() + "\n");
+                            + "\nplugin-version=" + plugin.getPluginMeta().getVersion() + "\n");
                 }
                 try { Files.move(temporary, output, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE); }
                 catch (java.nio.file.AtomicMoveNotSupportedException ignoredMove) { Files.move(temporary, output, StandardCopyOption.REPLACE_EXISTING); }
@@ -321,7 +321,7 @@ public final class BackupServiceImpl implements BackupService {
         Properties properties = new Properties();
         properties.setProperty("backup-id", view.id());
         properties.setProperty("creation-time", Instant.ofEpochMilli(view.createdAt()).toString());
-        properties.setProperty("plugin-version", plugin.getDescription().getVersion());
+        properties.setProperty("plugin-version", plugin.getPluginMeta().getVersion());
         properties.setProperty("server-version", BukkitVersion.safe());
         properties.setProperty("database-type", plugin.database().storageType().name());
         properties.setProperty("type", view.type());

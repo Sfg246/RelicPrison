@@ -1,26 +1,56 @@
 package site.mcrelicworld.relicprison.util;
 
-import org.bukkit.ChatColor;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
+import net.kyori.adventure.title.Title;
+import org.bukkit.entity.Player;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.time.Duration;
 
 public final class ColorUtil {
-    private static final Pattern HEX = Pattern.compile("&#([A-Fa-f0-9]{6})");
+    private static final LegacyComponentSerializer AMPERSAND = LegacyComponentSerializer.builder()
+            .character('&')
+            .hexCharacter('#')
+            .hexColors()
+            .useUnusualXRepeatedCharacterHexFormat()
+            .build();
+    private static final LegacyComponentSerializer SECTION = LegacyComponentSerializer.builder()
+            .character('\u00A7')
+            .hexColors()
+            .useUnusualXRepeatedCharacterHexFormat()
+            .build();
+    private static final PlainTextComponentSerializer PLAIN = PlainTextComponentSerializer.plainText();
 
     private ColorUtil() {}
 
     public static String color(String input) {
-        if (input == null) return "";
-        Matcher matcher = HEX.matcher(input);
-        StringBuffer out = new StringBuffer();
-        while (matcher.find()) {
-            String hex = matcher.group(1);
-            StringBuilder replacement = new StringBuilder("§x");
-            for (char c : hex.toCharArray()) replacement.append('§').append(c);
-            matcher.appendReplacement(out, Matcher.quoteReplacement(replacement.toString()));
-        }
-        matcher.appendTail(out);
-        return ChatColor.translateAlternateColorCodes('&', out.toString());
+        return SECTION.serialize(component(input));
+    }
+
+    public static Component component(String input) {
+        return AMPERSAND.deserialize(input == null ? "" : input);
+    }
+
+    public static Component legacyComponent(String input) {
+        return SECTION.deserialize(input == null ? "" : input);
+    }
+
+    public static String plain(String input) {
+        return PLAIN.serialize(component(input));
+    }
+
+    public static String plain(Component input) {
+        return input == null ? "" : PLAIN.serialize(input);
+    }
+
+    public static void showTitle(Player player, String title, String subtitle,
+                                 int fadeInTicks, int stayTicks, int fadeOutTicks) {
+        player.showTitle(Title.title(legacyComponent(title), legacyComponent(subtitle), Title.Times.times(
+                ticks(fadeInTicks), ticks(stayTicks), ticks(fadeOutTicks))));
+    }
+
+    private static Duration ticks(int ticks) {
+        return Duration.ofMillis(Math.max(0, ticks) * 50L);
     }
 }

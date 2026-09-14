@@ -17,7 +17,7 @@ public final class DropTransformer {
         for (ItemStack item : input) {
             Material target = conversions.get(item.getType());
             ItemStack copy = item.clone();
-            if (target != null) copy.setType(target);
+            if (target != null) copy = copy.withType(target);
             result.add(copy);
         }
         return List.copyOf(result);

@@ -107,7 +107,7 @@ public final class DiagnosticServiceImpl implements DiagnosticService {
         Map<String, String> values = new LinkedHashMap<>();
         values.put("collection-started-at", Instant.now().toString());
         values.put("detail-mode", String.valueOf(detailed));
-        values.put("relicprison-version", plugin.getDescription().getVersion());
+        values.put("relicprison-version", plugin.getPluginMeta().getVersion());
         values.put("server-version", safe(Bukkit::getVersion));
         values.put("bukkit-version", safe(Bukkit::getBukkitVersion));
         values.put("java-version", System.getProperty("java.version", "unavailable"));
@@ -218,7 +218,7 @@ public final class DiagnosticServiceImpl implements DiagnosticService {
         for (String name : List.of("Vault", "LuckPerms", "PlaceholderAPI", "ItemsAdder",
                 "AdvancedEnchantments", "WorldEdit", "FastAsyncWorldEdit", "WorldGuard")) {
             Plugin dependency = Bukkit.getPluginManager().getPlugin(name);
-            values.put("plugin-version." + name, dependency == null ? "unavailable" : dependency.getDescription().getVersion());
+            values.put("plugin-version." + name, dependency == null ? "unavailable" : dependency.getPluginMeta().getVersion());
         }
     }
 

@@ -86,6 +86,12 @@ public final class ConfigManager {
                 if (!world.isBlank()) excluded.add(world.toLowerCase(Locale.ROOT));
             }
 
+            StartupConfig startup = new StartupConfig(
+                    yaml.getBoolean("startup.banner", true),
+                    yaml.getBoolean("startup.environment-details", true),
+                    yaml.getBoolean("startup.integration-summary", true)
+            );
+
             IntegrationConfig integrations = parseIntegrations(yaml);
             FeatureToggles features = new FeatureToggles(
                     yaml.getBoolean("features.autosell", false),
@@ -235,7 +241,7 @@ public final class ConfigManager {
             WorldGuardConfig worldGuard = integrations.worldGuard();
 
             validateAuxiliaryYaml();
-            return new ConfigSnapshot(version, timezone, Set.copyOf(excluded), features, selection, storage,
+            return new ConfigSnapshot(version, timezone, Set.copyOf(excluded), startup, features, selection, storage,
                     formatting, placeholders, guiSecurity, leaderboards, logging, reset, teleport, progression,
                     worldGuard, integrations);
         } catch (ConfigException ex) {

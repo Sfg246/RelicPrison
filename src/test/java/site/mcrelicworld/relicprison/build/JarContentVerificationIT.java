@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.jar.JarFile;
 
@@ -30,6 +31,10 @@ final class JarContentVerificationIT {
                     "Production jar must not package dependency or development stub classes");
             assertTrue(entries.contains("plugin.yml"), "plugin.yml is required");
             assertTrue(entries.contains("integrations.yml"), "integrations.yml is required");
+            String pluginYaml = new String(jarFile.getInputStream(jarFile.getJarEntry("plugin.yml")).readAllBytes(),
+                    StandardCharsets.UTF_8);
+            assertTrue(pluginYaml.contains("version: '1.0.0'"),
+                    "plugin.yml must contain the official 1.0.0 version");
         }
     }
 

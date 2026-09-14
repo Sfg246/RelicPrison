@@ -1,5 +1,7 @@
 package site.mcrelicworld.relicprison.gui;
 
+import io.papermc.paper.event.player.AsyncChatEvent;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -8,7 +10,6 @@ import org.bukkit.event.inventory.InventoryAction;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCreativeEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 public final class PrisonGuiListener implements Listener {
     private final PrisonGuiManager menus;
@@ -25,17 +26,21 @@ public final class PrisonGuiListener implements Listener {
     }
     @EventHandler public void onDrag(InventoryDragEvent event){if(event.getView().getTopInventory().getHolder() instanceof PrisonGuiManager.Holder)event.setCancelled(true);}
 
-    @EventHandler public void onChat(AsyncPlayerChatEvent event){
+    @EventHandler public void onChat(AsyncChatEvent event){
         Player player=event.getPlayer();
         if(menus.hasPendingAdminInput(player.getUniqueId())){
             event.setCancelled(true);
-            menus.handleAdminChatInput(player.getUniqueId(),player.getName(),event.getMessage());
+            menus.handleAdminChatInput(player.getUniqueId(),player.getName(),plain(event));
             return;
         }
         if(menus.hasPendingGangRankInput(player.getUniqueId())){
             event.setCancelled(true);
-            menus.handleGangRankChatInput(player.getUniqueId(),event.getMessage());
+            menus.handleGangRankChatInput(player.getUniqueId(),plain(event));
         }
+    }
+
+    private static String plain(AsyncChatEvent event){
+        return PlainTextComponentSerializer.plainText().serialize(event.message());
     }
 
     private static boolean unsafe(InventoryClickEvent event){

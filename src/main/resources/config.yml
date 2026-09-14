@@ -6,6 +6,11 @@ server:
     - Spawn
     - Minigames
 
+startup:
+  banner: true
+  environment-details: true
+  integration-summary: true
+
 features:
   autosell: false
   autopickup: false

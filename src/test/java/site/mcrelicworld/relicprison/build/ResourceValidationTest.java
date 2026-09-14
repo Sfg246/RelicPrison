@@ -29,6 +29,11 @@ final class ResourceValidationTest {
                 "player mining statistics must be enabled by default");
         assertFalse(yaml.getBoolean("features.mine-analytics"),
                 "mine analytics must remain independently disabled by default");
+        assertTrue(yaml.getBoolean("startup.banner"), "startup banner must be enabled by default");
+        assertTrue(yaml.getBoolean("startup.environment-details"),
+                "startup environment details must be enabled by default");
+        assertTrue(yaml.getBoolean("startup.integration-summary"),
+                "startup integration summary must be enabled by default");
     }
 
     private static void validateTree(Path root, List<String> failures) throws Exception {

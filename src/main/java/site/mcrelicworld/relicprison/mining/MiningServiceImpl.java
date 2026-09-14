@@ -1,5 +1,7 @@
 package site.mcrelicworld.relicprison.mining;
 
+import io.papermc.paper.registry.RegistryAccess;
+import io.papermc.paper.registry.RegistryKey;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -70,7 +72,8 @@ public final class MiningServiceImpl implements MiningService {
         this.customBlocks = new ItemsAdderCustomBlockProvider(plugin.itemsAdder());
         this.transactions = new BulkMiningTransactionRepository(plugin.database());
         this.commits = new BulkMiningCommitRepository(plugin.database());
-        this.fortune = Enchantment.getByKey(NamespacedKey.minecraft("fortune"));
+        this.fortune = RegistryAccess.registryAccess().getRegistry(RegistryKey.ENCHANTMENT)
+                .get(NamespacedKey.minecraft("fortune"));
         this.bulkTransactionKey = new NamespacedKey(plugin, "bulk_transaction");
     }
 

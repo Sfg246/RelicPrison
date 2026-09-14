@@ -1,14 +1,14 @@
 # Versioned Documentation
 
-RelicPrison’s docs are version-aware so a future stable release does not silently rewrite instructions for an older server.
+RelicPrison's documentation preserves release history while keeping current instructions aligned with the official artifact.
 
 ## Current documentation channel
 
-<span class="status-pill">1.0.0-rc6-stage6</span>
+<span class="status-pill">1.0.0</span>
 <span class="status-pill">Paper 1.21.10</span>
 <span class="status-pill">Java 25</span>
 
-The live root documentation currently describes RC6 Stage 6.
+The live root documentation describes RelicPrison 1.0.0.
 
 ## Version policy
 
@@ -16,17 +16,13 @@ When a stable or incompatible release is published:
 
 1. Freeze a documentation snapshot for the outgoing version.
 2. Preserve its command/config/API reference.
-3. Move the root docs to the new recommended version.
-4. Add an explicit migration page describing changed keys, database migrations, commands, API changes, and breaking behavior.
-5. Keep old version pages available instead of silently rewriting history.
+3. Move root documentation to the new recommended version.
+4. Add an explicit migration page for changed keys, migrations, commands, APIs, and behavior.
+5. Keep older version pages available instead of rewriting history.
 
 ## Available channels
 
 | Channel | Status | Documentation |
 | --- | --- | --- |
-| `1.0.0-rc6-stage6` | Current RC staging documentation | [RC6 status](/releases/rc6) |
-| `1.0.0` | Not released | No version is fabricated before a real release exists. |
-
-## Why there is no fake 1.0 documentation
-
-GitHub currently has no formal RelicPrison Release published. The repository and CI can build the RC, but a successful build is not the same thing as a signed-off production release. This wiki keeps that distinction visible.
+| `1.0.0` | Current stable/final version | [1.0.0 release](/releases/1.0.0) |
+| `1.0.0-rc6-stage6` | Historical release candidate | [RC6 history](/releases/rc6) |

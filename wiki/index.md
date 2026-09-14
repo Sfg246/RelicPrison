@@ -106,18 +106,18 @@ See [All Systems](/systems/) for the full system map and [Visual Architecture & 
 
 ## Current documented build
 
-<span class="status-pill">RelicPrison 1.0.0-rc6-stage6</span>
+<span class="status-pill">RelicPrison 1.0.0</span>
 <span class="status-pill">Paper 1.21.10</span>
 <span class="status-pill">Java 25</span>
 <span class="status-pill">Maven</span>
 
-::: warning Staging build
-RC6 Stage 6 is documented for controlled Paper staging. Several real-server, integration, Bedrock/Java client, crash-recovery, and multi-server tests are still explicit manual verification work. See [RC6 Staging Status](/releases/rc6) and [Known Limitations](/known-limitations).
+::: warning Verification boundary
+RelicPrison 1.0.0 is the official final version, but several real-server, integration, Bedrock/Java client, crash-recovery, and multi-server tests remain explicit manual verification work. See [1.0.0 Release Notes](/releases/1.0.0) and [Known Limitations](/known-limitations).
 :::
 
 ## Real-client screenshots
 
-The current RC limitation report says real Java/Bedrock GUI rendering has not yet been captured. The wiki therefore includes [Visual Walkthroughs](/visuals/tutorials) that explain exactly what should be visible and what must be captured during staging, without pretending generated mockups are proof of real client behavior.
+The current limitation report says real Java/Bedrock GUI rendering has not yet been captured. The wiki therefore includes [Visual Walkthroughs](/visuals/tutorials) that explain exactly what should be visible and what must be captured during staging, without pretending generated mockups are proof of real client behavior.
 
 ## Source-driven documentation rule
 

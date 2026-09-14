@@ -5,7 +5,7 @@
 Requirements:
 
 - Paper `1.21.10`.
-- Java `21`.
+- Java `25`.
 - Vault with a registered economy provider.
 - LuckPerms.
 - Optional: PlaceholderAPI, ItemsAdder, WorldEdit or FAWE, WorldGuard, AdvancedEnchantments, Geyser.
@@ -18,6 +18,14 @@ Install:
 - Start the server once to create default configuration.
 - Configure `storage.yml`, `config.yml`, `mines.yml`, `ranks.yml`, `prestiges.yml`, `sell-prices.yml`, `boosters.yml`, `mining.yml`, `custom-drops.yml`, `block-events.yml`, `leaderboards.yml`, `leaderboard-rewards.yml`, and `guis/*.yml`.
 - Run `/rp validate` and `/rp diagnose`.
+
+When using the SQLite backend on Java 25, grant `sqlite-jdbc` native access when Paper starts:
+
+```text
+java --enable-native-access=ALL-UNNAMED -jar paper.jar --nogui
+```
+
+RelicPrison cannot grant native access after the server JVM has launched. MySQL-only servers do not load the SQLite native library during normal operation.
 
 ## Upgrade Notes
 
