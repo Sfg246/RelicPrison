@@ -10,6 +10,7 @@ on:
       - 'src/main/java/site/mcrelicworld/relicprison/command/**'
       - 'docs/CURRENT_STATE.md'
       - 'CHANGELOG.md'
+      - 'KNOWN-LIMITATIONS-*.md'
       - 'pom.xml'
       - '.github/workflows/docs.yml'
   pull_request:
@@ -20,6 +21,7 @@ on:
       - 'src/main/java/site/mcrelicworld/relicprison/command/**'
       - 'docs/CURRENT_STATE.md'
       - 'CHANGELOG.md'
+      - 'KNOWN-LIMITATIONS-*.md'
       - 'pom.xml'
       - '.github/workflows/docs.yml'
   workflow_dispatch:
